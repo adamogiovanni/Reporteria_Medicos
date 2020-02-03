@@ -51,10 +51,7 @@ class Sqlconsultas extends CI_Model
 
 	public function prueba2($min,$max)
 		{
-		    
-
-
-		      $UsRut = $this->session->userdata('UsRut');
+			     $UsRut = $this->session->userdata('UsRut');
 		      $UsIdPerfil = $this->session->userdata('UsIdPerfil');
 		      $r = substr($this->session->userdata('UsRut'), 0, 2);
 		      $c = strlen($this->session->userdata('UsRut'));
