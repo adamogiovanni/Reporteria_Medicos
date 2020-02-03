@@ -58,7 +58,7 @@
       <a data-toggle="collapse" data-parent="#accordionEx78" href="#collapseUnfiled" aria-expanded="true"
         aria-controls="collapseUnfiled">
         <h5 class="mt-1 mb-0">
-          <span>Provision</span>
+          <span>Provision Prueba</span>
           <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
