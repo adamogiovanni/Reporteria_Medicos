@@ -235,17 +235,15 @@ class Sqlconsultas extends CI_Model
 	}
 
 
-	public function pago1(){
-
-
-		
+	public function pago1()
+	{		
 		$UsRut = $this->session->userdata('UsRut');
 		$UsIdPerfil = $this->session->userdata('UsIdPerfil');
 		$r = substr($this->session->userdata('UsRut'), 0, 2);
 		$c = strlen($this->session->userdata('UsRut'));
-		if($UsIdPerfil==3 && $r>40 && $c=10){
-
-
+		
+		if($UsIdPerfil==399 && $r>40 && $c=10)
+		{
 			$consulta = "
 			SELECT   UsRut FROM   gen_usuarios where UsRutEmpresa='$UsRut'
 			";
@@ -257,37 +255,16 @@ class Sqlconsultas extends CI_Model
 			}
 			$resultado = substr($resultado, 1); 
 
-		 $sql = " 
-		 SELECT  '18', t1.IdProceso AS Id, t1.Empresa, t1.NombreArchivo AS Archivo, t1.FechaProceso AS Fecha_Proceso, t2.Correlativo, t2.RutCliente AS Rut, t2.NroDocumento AS Nro_Doc_Cancelado, 
-		 t2.MontoDocumento AS Monto_Pagado, t2.NroComprobante AS Nro_Comprobante, concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante, t2.FechaProceso AS Fecha_de_Proceso_Pago
-		 FROM    cargasoft_file_resumen AS t1 INNER JOIN
-		 cargasoft_file_comprobantepagodevengo AS t2 ON t1.IdProceso = t2.IdProceso where t2.RutCliente in (".$resultado.")
-		 ";
-
-		  
-	  }
-	  else if($UsIdPerfil==3){
-		$sql = "            
-		SELECT  '19', t1.IdProceso AS Id, t1.Empresa, t1.NombreArchivo AS Archivo, t1.FechaProceso AS Fecha_Proceso, t2.Correlativo, t2.RutCliente AS Rut, t2.NroDocumento AS Nro_Doc_Cancelado, 
-		t2.MontoDocumento AS Monto_Pagado, t2.NroComprobante AS Nro_Comprobante, concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante, t2.FechaProceso AS Fecha_de_Proceso_Pago
-		FROM cargasoft_file_resumen AS t1 INNER JOIN
-		cargasoft_file_comprobantepagodevengo AS t2 ON t1.IdProceso = t2.IdProceso where t2.RutCliente='$UsRut'
-		";
-
-		  
-	  }else{
-        $sql = 
-        "
-        SELECT '20',  t1.IdProceso AS Id, t1.Empresa, t1.NombreArchivo AS Archivo, t1.FechaProceso AS Fecha_Proceso, t2.Correlativo, t2.RutCliente AS Rut, t2.NroDocumento AS Nro_Doc_Cancelado, 
-        t2.MontoDocumento AS Monto_Pagado, t2.NroComprobante AS Nro_Comprobante, concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante, t2.FechaProceso AS Fecha_de_Proceso_Pago
-        FROM  cargasoft_file_resumen AS t1 INNER JOIN
-        cargasoft_file_comprobantepagodevengo AS t2 ON t1.IdProceso = t2.IdProceso
-		";
-	  }
-	  
-	  
-
-	  
+			$sql = "SELECT   t1.IdProceso AS Id, t1.Empresa, t1.NombreArchivo AS Archivo, t1.FechaProceso AS Fecha_Proceso, t2.Correlativo, t2.RutCliente AS Rut, t2.NroDocumento AS Nro_Doc_Cancelado, t2.MontoDocumento AS Monto_Pagado, t2.NroComprobante AS Nro_Comprobante, concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante, t2.FechaProceso AS Fecha_de_Proceso_Pago	FROM    cargasoft_file_resumen AS t1 INNER JOIN			cargasoft_file_comprobantepagodevengo AS t2 ON t1.IdProceso = t2.IdProceso where t2.RutCliente in (".$resultado.")";	  
+	  	}
+	  	else if($UsIdPerfil==3)
+		{
+			$sql = "SELECT  t1.IdProceso AS Id, t1.Empresa, t1.NombreArchivo AS Archivo, t1.FechaProceso AS Fecha_Proceso, t2.Correlativo, t2.RutCliente AS Rut, t2.NroDocumento AS Nro_Doc_Cancelado, 	t2.MontoDocumento AS Monto_Pagado, t2.NroComprobante AS Nro_Comprobante, concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante, t2.FechaProceso AS Fecha_de_Proceso_Pago	FROM cargasoft_file_resumen AS t1 INNER JOIN cargasoft_file_comprobantepagodevengo AS t2 ON t1.IdProceso = t2.IdProceso where t2.RutCliente='$UsRut'	";		  
+		}
+		else
+		{
+			$sql = "SELECT   t1.IdProceso AS Id, t1.Empresa, t1.NombreArchivo AS Archivo, t1.FechaProceso AS Fecha_Proceso, t2.Correlativo, t2.RutCliente AS Rut, t2.NroDocumento AS Nro_Doc_Cancelado, t2.MontoDocumento AS Monto_Pagado, t2.NroComprobante AS Nro_Comprobante, concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante, t2.FechaProceso AS Fecha_de_Proceso_Pago		FROM  cargasoft_file_resumen AS t1 INNER JOIN		cargasoft_file_comprobantepagodevengo AS t2 ON t1.IdProceso = t2.IdProceso";
+		}  	  
         $query = $this->BASE_DE_DATOS_LOCAL->query($sql);
 		return $query->result_array();
 	}
