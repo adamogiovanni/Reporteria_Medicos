@@ -248,7 +248,7 @@
 
                   <thead>
                     <tr>
-                      <th>ID</th>
+                      <!-- <th>ID</th>-->
                       <th>Empresa</th>
                       <th>Correlativo</th>
                       <th>Fecha_Proceso</th>                     
@@ -264,7 +264,7 @@
                   <tfooter>
                     <tr>
 
-                      <th>ID</th>
+                      <!-- <th>ID</th>-->
                       <th>Empresa</th>
                       <th>Correlativo</th>
                       <th>Fecha_Proceso</th>                     
