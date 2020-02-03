@@ -151,7 +151,7 @@ class Sqlconsultas extends CI_Model
 		if($UsIdPerfil==3 && $r>40 && $c=10){
 			$a = '"2-01-06-300"';
 						$sql = "
-						SELECT     cargasoft_file_detalle.Monto2DetalleLibro AS ValorRetencion,   t1.IdProceso AS ID, cargasoft_file_detalle.TipoDocumento, cargasoft_file_detalle.NroDocumento AS Boleta, cargasoft_file_detalle.MontoHaberMonedaBase AS Valor_Neto, 
+						SELECT '12',    cargasoft_file_detalle.Monto2DetalleLibro AS ValorRetencion,   t1.IdProceso AS ID, cargasoft_file_detalle.TipoDocumento, cargasoft_file_detalle.NroDocumento AS Boleta, cargasoft_file_detalle.MontoHaberMonedaBase AS Valor_Neto, 
 					   cargasoft_file_detalle.DescripcionMovimiento AS Observacion, cargasoft_file_detalle.CodigoAuxiliar AS Rut_Doctor, t1.CodigoEstado, cargasoft_file_estados.NombreEstado, t1.Empresa, t1.NombreArchivo, 
 					   t1.FechaProceso, t2.NroComprobante, concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante, cargasoft_file_detalle.CuentaContable
 		FROM            cargasoft_file_resumen AS t1 INNER JOIN
@@ -164,7 +164,7 @@ class Sqlconsultas extends CI_Model
 		  else if($UsIdPerfil==3){
 			$a = '"2-01-06-300"';
 							$sql = "
-							SELECT     cargasoft_file_detalle.Monto2DetalleLibro AS ValorRetencion,   t1.IdProceso AS ID, cargasoft_file_detalle.TipoDocumento, cargasoft_file_detalle.NroDocumento AS Boleta, cargasoft_file_detalle.MontoHaberMonedaBase AS Valor_Neto, 
+							SELECT  '13',   cargasoft_file_detalle.Monto2DetalleLibro AS ValorRetencion,   t1.IdProceso AS ID, cargasoft_file_detalle.TipoDocumento, cargasoft_file_detalle.NroDocumento AS Boleta, cargasoft_file_detalle.MontoHaberMonedaBase AS Valor_Neto, 
 						   cargasoft_file_detalle.DescripcionMovimiento AS Observacion, cargasoft_file_detalle.CodigoAuxiliar AS Rut_Doctor, t1.CodigoEstado, cargasoft_file_estados.NombreEstado, t1.Empresa, t1.NombreArchivo, 
 						   t1.FechaProceso, t2.NroComprobante, concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante, cargasoft_file_detalle.CuentaContable
 		FROM            cargasoft_file_resumen AS t1 INNER JOIN
@@ -177,7 +177,7 @@ class Sqlconsultas extends CI_Model
 
 			$a = '"2-01-06-300"';
 				$sql = "
-				SELECT cargasoft_file_detalle.Monto2DetalleLibro AS ValorRetencion, t1.IdProceso AS ID, cargasoft_file_detalle.TipoDocumento, cargasoft_file_detalle.NroDocumento AS Boleta, cargasoft_file_detalle.MontoHaberMonedaBase AS Valor_Neto, 
+				SELECT '14', cargasoft_file_detalle.Monto2DetalleLibro AS ValorRetencion, t1.IdProceso AS ID, cargasoft_file_detalle.TipoDocumento, cargasoft_file_detalle.NroDocumento AS Boleta, cargasoft_file_detalle.MontoHaberMonedaBase AS Valor_Neto, 
 				cargasoft_file_detalle.DescripcionMovimiento AS Observacion, cargasoft_file_detalle.CodigoAuxiliar AS Rut_Doctor, t1.CodigoEstado, cargasoft_file_estados.NombreEstado, t1.Empresa, t1.NombreArchivo, 
 				t1.FechaProceso, t2.NroComprobante, concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante, cargasoft_file_detalle.CuentaContable
 				FROM    cargasoft_file_resumen AS t1 INNER JOIN
@@ -214,7 +214,7 @@ class Sqlconsultas extends CI_Model
 				$resultado = substr($resultado, 1); 
 				$a='"2-01-06-300"';
 							$sql = "
-							SELECT         cargasoft_file_detalle.Monto2DetalleLibro AS ValorRetencion, t1.IdProceso AS ID, cargasoft_file_detalle.TipoDocumento, cargasoft_file_detalle.NroDocumento AS Boleta, cargasoft_file_detalle.MontoHaberMonedaBase AS Valor_Neto, 
+							SELECT  '15',       cargasoft_file_detalle.Monto2DetalleLibro AS ValorRetencion, t1.IdProceso AS ID, cargasoft_file_detalle.TipoDocumento, cargasoft_file_detalle.NroDocumento AS Boleta, cargasoft_file_detalle.MontoHaberMonedaBase AS Valor_Neto, 
 						   cargasoft_file_detalle.DescripcionMovimiento AS Observacion, cargasoft_file_detalle.CodigoAuxiliar AS Rut_Doctor, t1.CodigoEstado, cargasoft_file_estados.NombreEstado, t1.Empresa, t1.NombreArchivo, 
 						   t1.FechaProceso, t2.NroComprobante, concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante, cargasoft_file_detalle.CuentaContable
 				FROM            cargasoft_file_resumen AS t1 INNER JOIN
@@ -226,7 +226,7 @@ class Sqlconsultas extends CI_Model
 				  }
 				  else if($UsIdPerfil==3){
 					$a='"2-01-06-300"';
-									$sql = "SELECT         cargasoft_file_detalle.Monto2DetalleLibro AS ValorRetencion, t1.IdProceso AS ID, cargasoft_file_detalle.TipoDocumento, cargasoft_file_detalle.NroDocumento AS Boleta, cargasoft_file_detalle.MontoHaberMonedaBase AS Valor_Neto, 
+									$sql = "SELECT  '16',       cargasoft_file_detalle.Monto2DetalleLibro AS ValorRetencion, t1.IdProceso AS ID, cargasoft_file_detalle.TipoDocumento, cargasoft_file_detalle.NroDocumento AS Boleta, cargasoft_file_detalle.MontoHaberMonedaBase AS Valor_Neto, 
 								   cargasoft_file_detalle.DescripcionMovimiento AS Observacion, cargasoft_file_detalle.CodigoAuxiliar AS Rut_Doctor, t1.CodigoEstado, cargasoft_file_estados.NombreEstado, t1.Empresa, t1.NombreArchivo, 
 								   t1.FechaProceso, t2.NroComprobante, concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante, cargasoft_file_detalle.CuentaContable
 				FROM            cargasoft_file_resumen AS t1 INNER JOIN
@@ -239,7 +239,7 @@ class Sqlconsultas extends CI_Model
 
 					$a='"2-01-06-300"';
 									 $sql = "
-									 SELECT       cargasoft_file_detalle.Monto2DetalleLibro AS ValorRetencion,   t1.IdProceso AS ID, cargasoft_file_detalle.TipoDocumento, cargasoft_file_detalle.NroDocumento AS Boleta, cargasoft_file_detalle.MontoHaberMonedaBase AS Valor_Neto, 
+									 SELECT  '17',     cargasoft_file_detalle.Monto2DetalleLibro AS ValorRetencion,   t1.IdProceso AS ID, cargasoft_file_detalle.TipoDocumento, cargasoft_file_detalle.NroDocumento AS Boleta, cargasoft_file_detalle.MontoHaberMonedaBase AS Valor_Neto, 
 								   cargasoft_file_detalle.DescripcionMovimiento AS Observacion, cargasoft_file_detalle.CodigoAuxiliar AS Rut_Doctor, t1.CodigoEstado, cargasoft_file_estados.NombreEstado, t1.Empresa, t1.NombreArchivo, 
 								   t1.FechaProceso, t2.NroComprobante, concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante, cargasoft_file_detalle.CuentaContable
 				FROM            cargasoft_file_resumen AS t1 INNER JOIN
@@ -280,7 +280,7 @@ class Sqlconsultas extends CI_Model
 			$resultado = substr($resultado, 1); 
 
 		 $sql = " 
-		 SELECT   t1.IdProceso AS Id, t1.Empresa, t1.NombreArchivo AS Archivo, t1.FechaProceso AS Fecha_Proceso, t2.Correlativo, t2.RutCliente AS Rut, t2.NroDocumento AS Nro_Doc_Cancelado, 
+		 SELECT  '18', t1.IdProceso AS Id, t1.Empresa, t1.NombreArchivo AS Archivo, t1.FechaProceso AS Fecha_Proceso, t2.Correlativo, t2.RutCliente AS Rut, t2.NroDocumento AS Nro_Doc_Cancelado, 
 		 t2.MontoDocumento AS Monto_Pagado, t2.NroComprobante AS Nro_Comprobante, concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante, t2.FechaProceso AS Fecha_de_Proceso_Pago
 		 FROM    cargasoft_file_resumen AS t1 INNER JOIN
 		 cargasoft_file_comprobantepagodevengo AS t2 ON t1.IdProceso = t2.IdProceso where t2.RutCliente in (".$resultado.")
@@ -290,7 +290,7 @@ class Sqlconsultas extends CI_Model
 	  }
 	  else if($UsIdPerfil==3){
 		$sql = "            
-		SELECT   t1.IdProceso AS Id, t1.Empresa, t1.NombreArchivo AS Archivo, t1.FechaProceso AS Fecha_Proceso, t2.Correlativo, t2.RutCliente AS Rut, t2.NroDocumento AS Nro_Doc_Cancelado, 
+		SELECT  '19', t1.IdProceso AS Id, t1.Empresa, t1.NombreArchivo AS Archivo, t1.FechaProceso AS Fecha_Proceso, t2.Correlativo, t2.RutCliente AS Rut, t2.NroDocumento AS Nro_Doc_Cancelado, 
 		t2.MontoDocumento AS Monto_Pagado, t2.NroComprobante AS Nro_Comprobante, concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante, t2.FechaProceso AS Fecha_de_Proceso_Pago
 		FROM cargasoft_file_resumen AS t1 INNER JOIN
 		cargasoft_file_comprobantepagodevengo AS t2 ON t1.IdProceso = t2.IdProceso where t2.RutCliente='$UsRut'
@@ -300,7 +300,7 @@ class Sqlconsultas extends CI_Model
 	  }else{
         $sql = 
         "
-        SELECT   t1.IdProceso AS Id, t1.Empresa, t1.NombreArchivo AS Archivo, t1.FechaProceso AS Fecha_Proceso, t2.Correlativo, t2.RutCliente AS Rut, t2.NroDocumento AS Nro_Doc_Cancelado, 
+        SELECT '20',  t1.IdProceso AS Id, t1.Empresa, t1.NombreArchivo AS Archivo, t1.FechaProceso AS Fecha_Proceso, t2.Correlativo, t2.RutCliente AS Rut, t2.NroDocumento AS Nro_Doc_Cancelado, 
         t2.MontoDocumento AS Monto_Pagado, t2.NroComprobante AS Nro_Comprobante, concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante, t2.FechaProceso AS Fecha_de_Proceso_Pago
         FROM  cargasoft_file_resumen AS t1 INNER JOIN
         cargasoft_file_comprobantepagodevengo AS t2 ON t1.IdProceso = t2.IdProceso
@@ -335,7 +335,7 @@ class Sqlconsultas extends CI_Model
 			}
 			$resultado = substr($resultado, 1); 
 
-						$sql = "	 SELECT   t1.IdProceso AS Id, t1.Empresa, t1.NombreArchivo AS Archivo, t1.FechaProceso AS Fecha_Proceso, t2.Correlativo, t2.RutCliente AS Rut, t2.NroDocumento AS Nro_Doc_Cancelado, 
+						$sql = "	 SELECT  '22', t1.IdProceso AS Id, t1.Empresa, t1.NombreArchivo AS Archivo, t1.FechaProceso AS Fecha_Proceso, t2.Correlativo, t2.RutCliente AS Rut, t2.NroDocumento AS Nro_Doc_Cancelado, 
 						t2.MontoDocumento AS Monto_Pagado, t2.NroComprobante AS Nro_Comprobante, concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante, t2.FechaProceso AS Fecha_de_Proceso_Pago
 					   FROM  cargasoft_file_resumen AS t1 INNER JOIN
 					   cargasoft_file_comprobantepagodevengo AS t2 ON t1.IdProceso = t2.IdProceso 
@@ -343,7 +343,7 @@ class Sqlconsultas extends CI_Model
 					   and concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2))<'$max'  and t2.RutCliente in (".$resultado.")  ";
 	  }
 	  else if($UsIdPerfil==3 ){
-						$sql = " SELECT   t1.IdProceso AS Id, t1.Empresa, t1.NombreArchivo AS Archivo, t1.FechaProceso AS Fecha_Proceso, t2.Correlativo, t2.RutCliente AS Rut, t2.NroDocumento AS Nro_Doc_Cancelado, 
+						$sql = " SELECT  '23', t1.IdProceso AS Id, t1.Empresa, t1.NombreArchivo AS Archivo, t1.FechaProceso AS Fecha_Proceso, t2.Correlativo, t2.RutCliente AS Rut, t2.NroDocumento AS Nro_Doc_Cancelado, 
 						t2.MontoDocumento AS Monto_Pagado, t2.NroComprobante AS Nro_Comprobante, concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante, t2.FechaProceso AS Fecha_de_Proceso_Pago
 					   FROM  cargasoft_file_resumen AS t1 INNER JOIN
 					   cargasoft_file_comprobantepagodevengo AS t2 ON t1.IdProceso = t2.IdProceso 
@@ -351,7 +351,7 @@ class Sqlconsultas extends CI_Model
 					   and concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2))<'$max'  and t2.RutCliente='$UsRut'  ";
 	  }else{
 						 $sql = "	
-						 SELECT   t1.IdProceso AS Id, t1.Empresa, t1.NombreArchivo AS Archivo, t1.FechaProceso AS Fecha_Proceso, t2.Correlativo, t2.RutCliente AS Rut, t2.NroDocumento AS Nro_Doc_Cancelado, 
+						 SELECT '24',  t1.IdProceso AS Id, t1.Empresa, t1.NombreArchivo AS Archivo, t1.FechaProceso AS Fecha_Proceso, t2.Correlativo, t2.RutCliente AS Rut, t2.NroDocumento AS Nro_Doc_Cancelado, 
 		 t2.MontoDocumento AS Monto_Pagado, t2.NroComprobante AS Nro_Comprobante, concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante, t2.FechaProceso AS Fecha_de_Proceso_Pago
 		FROM  cargasoft_file_resumen AS t1 INNER JOIN
 		cargasoft_file_comprobantepagodevengo AS t2 ON t1.IdProceso = t2.IdProceso 
