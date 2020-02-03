@@ -1,0 +1,13 @@
+[04-Apr-2019 19:46:09 UTC] PHP Fatal error:  Call to a member function graficoLinea() on null in /home/ncmh/public_html/reporteria/application/controllers/Rdocumento.php on line 32
+[04-Apr-2019 19:47:34 UTC] PHP Fatal error:  Call to a member function graficoLinea() on null in /home/ncmh/public_html/reporteria/application/controllers/Rdocumento.php on line 32
+[04-Apr-2019 19:47:56 UTC] PHP Fatal error:  Call to a member function graficoLinea() on null in /home/ncmh/public_html/reporteria/application/controllers/Rdocumento.php on line 32
+[04-Apr-2019 19:48:28 UTC] PHP Fatal error:  Call to a member function query() on null in /home/ncmh/public_html/reporteria/application/models/Consultas.php on line 170
+[04-Apr-2019 19:55:24 UTC] PHP Fatal error:  Call to a member function graficoBarra() on null in /home/ncmh/public_html/reporteria/application/controllers/Rdocumento.php on line 34
+[04-Apr-2019 20:15:13 UTC] PHP Fatal error:  Call to a member function graficoBarra() on null in /home/ncmh/public_html/reporteria/application/controllers/Rdocumento.php on line 34
+[04-Apr-2019 20:17:20 UTC] PHP Fatal error:  Call to a member function prueba() on null in /home/ncmh/public_html/reporteria/application/controllers/Rdocumento.php on line 36
+[04-Apr-2019 20:17:38 UTC] PHP Fatal error:  Call to a member function prueba() on null in /home/ncmh/public_html/reporteria/application/controllers/Rdocumento.php on line 36
+[04-Apr-2019 20:19:28 UTC] PHP Fatal error:  Call to a member function prueba() on null in /home/ncmh/public_html/reporteria/application/controllers/Rdocumento.php on line 434
+[04-Apr-2019 20:19:28 UTC] PHP Fatal error:  Call to a member function devengo1() on null in /home/ncmh/public_html/reporteria/application/controllers/Rdocumento.php on line 483
+[04-Apr-2019 20:19:28 UTC] PHP Fatal error:  Call to a member function pago1() on null in /home/ncmh/public_html/reporteria/application/controllers/Rdocumento.php on line 530
+[05-Apr-2019 05:18:18 UTC] PHP Parse error:  syntax error, unexpected '','' (T_CONSTANT_ENCAPSED_STRING) in /home/ncmh/public_html/reporteria/application/models/Consultas.php on line 196
+[05-Apr-2019 16:39:39 UTC] PHP Parse error:  syntax error, unexpected '','' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ncmh/public_html/reporteria/application/views/footer.php on line 175

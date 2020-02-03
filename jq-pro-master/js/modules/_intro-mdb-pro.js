@@ -1,0 +1,67 @@
+/*!
+ * Material Design for Bootstrap 4
+ * Version: MDB Pro 4.6.1
+ *
+ *
+ * Copyright: Material Design for Bootstrap
+ * https://mdbootstrap.com/
+ *
+ * Read the license: https://mdbootstrap.com/license/
+ *
+ *
+ * Documentation: https://mdbootstrap.com/
+ *
+ * Getting started: https://mdbootstrap.com/getting-started/
+ *
+ * Tutorials: https://mdbootstrap.com/bootstrap-tutorial/
+ *
+ * Templates: https://mdbootstrap.com/templates/
+ *
+ * Support: https://mdbootstrap.com/forums/forum/support/
+ *
+ * Contact: office@mdbootstrap.com
+ *
+ * Attribution: Animate CSS, Twitter Bootstrap, Materialize CSS, Normalize CSS, Waves JS, WOW JS, Toastr, Chart.js , Hammer.js
+ *
+ */
+
+
+/*
+
+  jquery.easing.js
+  velocity.js
+  chart.js
+  wow.js
+  scrolling-navbar.js
+  waves.js
+  forms-free.js
+  preloading.js
+  cards.js
+  character-counter.js
+  toastr.js
+  smooth-scroll.js
+  dropdown.js
+  buttons.js
+  hammer.js
+  jquery.hammer.js
+  sidenav.js
+  collapsible.js
+  jquery.easypiechart.js
+  range-input.js
+  file-input.js
+  material-select.js
+  picker.js
+  picker-date.js
+  picker-time.js
+  lightbox.js
+  jquery.sticky.js
+  scrollbar.js
+  chips.js
+  ofi.js
+  jarallax.js
+  jarallax-video.js
+  mdb-autocomplete.js
+  enhanced-modals.js
+
+*/
+
