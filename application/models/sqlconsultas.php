@@ -16,7 +16,7 @@ class Sqlconsultas extends CI_Model
 		$UsIdPerfil = $this->session->userdata('UsIdPerfil');
 		$r = substr($this->session->userdata('UsRut'), 0, 2);
 		$c = strlen($this->session->userdata('UsRut'));
-		if($UsIdPerfil==3 && $r>40 && $c=10)
+		if($UsIdPerfil==399 && $r>40 && $c=10)
 		{
 			$x='"';
 			$a='"2-01-04-400"';
