@@ -16,7 +16,7 @@ class Sqlconsultas extends CI_Model
 		$UsIdPerfil = $this->session->userdata('UsIdPerfil');
 		$r = substr($this->session->userdata('UsRut'), 0, 2);
 		$c = strlen($this->session->userdata('UsRut'));
-		if($UsIdPerfil==399 && $r>40 && $c=10)
+		if($UsIdPerfil==3 && $r>40 && $c=10)
 		{
 			$x='"';
 			$a='"2-01-04-400"';
@@ -29,7 +29,7 @@ class Sqlconsultas extends CI_Model
 				$resultado = $resultado.",'".$row->UsRut."'";
 			}
 			$resultado = substr($resultado, 1); 
-			echo 'usurut'.$UsRut.'  resul'.$resultado ;
+			//echo 'usurut'.$UsRut.'  resul'.$resultado ;
 			$sql = "SELECT top 3000 t1.Empresa, cargasoft_file_detalle.NroDocumento AS Caso,cargasoft_file_detalle.DescripcionMovimiento AS Observacion,REPLACE(cargasoft_file_detalle.CodigoAuxiliar,'$x','') AS Rut_Doctor,cargasoft_file_detalle.MontoHaberMonedaBase AS Valor, 'Provisión' as NombreEstado, t2.NroComprobante,concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante	FROM cargasoft_file_resumen AS t1 INNER JOIN cargasoft_file_comprobantecarga AS t2 ON t1.IdProceso = t2.IdProceso INNER JOIN cargasoft_file_estados ON t1.CodigoEstado = cargasoft_file_estados.CodigoEstado LEFT OUTER JOIN cargasoft_file_detalle ON t1.IdProceso = cargasoft_file_detalle.IdProceso WHERE (t1.NombreArchivo LIKE 'NCMH_1%') and (cargasoft_file_detalle.CuentaContable = '$a') AND (REPLACE(cargasoft_file_detalle.CodigoAuxiliar,'$x','') in (".$resultado.")) ORDER BY  FechaComprobante DESC"; 
 		}
         else if($UsIdPerfil==3 )
@@ -137,7 +137,7 @@ class Sqlconsultas extends CI_Model
 		$UsIdPerfil = $this->session->userdata('UsIdPerfil');
 		$r = substr($this->session->userdata('UsRut'), 0, 2);
 		$c = strlen($this->session->userdata('UsRut'));
-
+		echo 'ENTRO EN DEVENGO 1'
 		$consulta = "
 		SELECT   UsRut FROM   gen_usuarios where UsRutEmpresa='$UsRut'
 		";
@@ -178,6 +178,7 @@ class Sqlconsultas extends CI_Model
 			$UsIdPerfil = $this->session->userdata('UsIdPerfil');
 			$r = substr($this->session->userdata('UsRut'), 0, 2);
 			$c = strlen($this->session->userdata('UsRut'));
+			echo 'ENTRO EN DEVENGO 2'
 			if($UsIdPerfil==3 && $r>40 && $c=10){
 
 				$consulta = "
@@ -242,7 +243,7 @@ class Sqlconsultas extends CI_Model
 		$r = substr($this->session->userdata('UsRut'), 0, 2);
 		$c = strlen($this->session->userdata('UsRut'));
 		
-		if($UsIdPerfil==399 && $r>40 && $c=10)
+		if($UsIdPerfil==3 && $r>40 && $c=10)
 		{
 			$consulta = "
 			SELECT   UsRut FROM   gen_usuarios where UsRutEmpresa='$UsRut'
