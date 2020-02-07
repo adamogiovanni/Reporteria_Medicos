@@ -137,7 +137,7 @@ class Sqlconsultas extends CI_Model
 		$UsIdPerfil = $this->session->userdata('UsIdPerfil');
 		$r = substr($this->session->userdata('UsRut'), 0, 2);
 		$c = strlen($this->session->userdata('UsRut'));
-		echo 'ENTRO EN DEVENGO 1'
+		echo 'ENTRO EN DEVENGO 1';
 		$consulta = "
 		SELECT   UsRut FROM   gen_usuarios where UsRutEmpresa='$UsRut'
 		";
@@ -178,7 +178,7 @@ class Sqlconsultas extends CI_Model
 			$UsIdPerfil = $this->session->userdata('UsIdPerfil');
 			$r = substr($this->session->userdata('UsRut'), 0, 2);
 			$c = strlen($this->session->userdata('UsRut'));
-			echo 'ENTRO EN DEVENGO 2'
+			echo 'ENTRO EN DEVENGO 2';
 			if($UsIdPerfil==3 && $r>40 && $c=10){
 
 				$consulta = "
