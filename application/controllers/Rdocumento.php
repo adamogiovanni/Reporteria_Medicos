@@ -47,9 +47,7 @@
         $dataSidebar['prueba']=$prueba;
         $this->load->view('header',$dataSidebar);
         $this->load->view('reporteria/rdocumento');
-        $dataFooter=array(
-        'scripts'=> "<script src='".base_url()."js/sucursales.js'></script>"
-        );
+        $dataFooter=array('scripts'=> "<script src='".base_url()."js/sucursales.js'></script>");
         $this->load->view('footer',$dataFooter);     
       }     
           
@@ -77,9 +75,7 @@
       $dataSidebar['prueba']=$prueba;
       $this->load->view('header',$dataSidebar);
       $this->load->view('reporteria/rdocumento');
-      $dataFooter=array(
-      'scripts'=> "<script src='".base_url()."js/sucursales.js'></script>"
-      );
+      $dataFooter=array('scripts'=> "<script src='".base_url()."js/sucursales.js'></script>");
       $this->load->view('footer',$dataFooter);
     }
 
@@ -115,32 +111,31 @@
 
 
 
-    public function probando(){
-
-    $prueba = $this->consultas->prueba();
-    $grafico = $this->consultas->grafico();
-    $datos['prueba']=$prueba;
-    $datos['grafico']=$grafico;
-
-    $this->load->view("probando",$datos);
-
-    }
+    /*public function probando()
+    {
+      $prueba = $this->consultas->prueba();
+      $grafico = $this->consultas->grafico();
+      $datos['prueba']=$prueba;
+      $datos['grafico']=$grafico;
+      $this->load->view("probando",$datos);
+    }*/
 
     
-    public function descargar(){
+    public function descargar()
+    {
 
-    // instantiate and use the dompdf class
+      // instantiate and use the dompdf class
 
 
-  $file_name = 'google_chart.pdf';
-  $html = '<link rel="stylesheet" href="bootstrap.min.css">';
-  $html .= $_POST["hidden_html"];
+      $file_name = 'google_chart.pdf';
+      $html = '<link rel="stylesheet" href="bootstrap.min.css">';
+      $html .= $_POST["hidden_html"];
 
-    $pdf = new \Dompdf\Dompdf();
-    $pdf->set_paper('letter', 'landscape');
-  $pdf->load_html(utf8_decode($html));
-  $pdf->render();
-  $pdf->stream($file_name, array("Attachment" => false));
+      $pdf = new \Dompdf\Dompdf();
+      $pdf->set_paper('letter', 'landscape');
+      $pdf->load_html(utf8_decode($html));
+      $pdf->render();
+      $pdf->stream($file_name, array("Attachment" => false));
 
 
     }
@@ -148,44 +143,45 @@
 
     public function consultarango()
     {
-
-
       $min = $_POST['min'];
       $max = $_POST['max'];
       $data = [];
-      if($min==0){
-      $prueba = $this->sqlconsultas->prueba();
-      foreach($prueba as $pru){
-      $data[] = array(
-      $pru['Empresa'],
-      $pru['Caso'],
-      '$'.number_format($pru['Valor'], 0, ",", "."),
-      $pru['NombreEstado'],
-      $pru['NroComprobante'],
-      $pru['FechaComprobante'],
-      $pru['Rut_Doctor'],
-      $pru['Observacion'] );
-    }
-
-    }
-    else
-    {
-
-        
-
-      $prueba = $this->sqlconsultas->prueba2($min,$max);
-      foreach($prueba as $pru){
-            $data[] = array(
-                  $pru['Empresa'],
-                  $pru['Caso'],
-                  $pru['Valor'],
-                  $pru['NombreEstado'],
-                  $pru['NroComprobante'],
-                  $pru['FechaComprobante'],
-                  $pru['Rut_Doctor'],
-                  $pru['Observacion']      
-            );
-              }
+      if($min==0)
+      {
+        $prueba = $this->sqlconsultas->prueba();
+        foreach($prueba as $pru)
+        {
+          $data[] = array
+          (
+            $pru['Empresa'],
+            $pru['Caso'],
+            '$'.number_format($pru['Valor'], 0, ",", "."),
+            $pru['NombreEstado'],
+            $pru['NroComprobante'],
+            $pru['FechaComprobante'],
+            $pru['Rut_Doctor'],
+            $pru['Observacion'] 
+          );
+        }
+      }    
+      else
+      {
+        $prueba = $this->sqlconsultas->prueba2($min,$max);
+        foreach($prueba as $pru)
+        {
+          $data[] = array
+          (
+            $pru['Empresa'],
+            $pru['Caso'],
+            $pru['Valor'],
+            $pru['NombreEstado'],
+            $pru['NroComprobante'],
+            $pru['FechaComprobante'],
+            $pru['Rut_Doctor'],
+            $pru['Observacion']      
+          );
+        }
+      }
 
     }
 
