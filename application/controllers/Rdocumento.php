@@ -89,22 +89,22 @@
       $ControlName="ModSuc";
       $btnName="Modificar";  
       $miSucursal = $this->consultas_adm->consultaGral("proy_sucursal","SucId",$idSucursal,2);
-        if(!$miSucursal){
-            $miSucursal=array(
-            'SucId'=>0,
-            'SucNombreSucursal'=>''
-          );
-            $ControlName="addImagen";
-            $btnName="Agregar"; 
-        }
+        if(!$miSucursal)
+        {
+          $miSucursal=array(
+          'SucId'=>0,
+          'SucNombreSucursal'=>'');
+          $ControlName="addImagen";
+          $btnName="Agregar"; 
+        }     
         
-        
-        $idEmpresa = $this->session->userdata('UsIdEmpresa');
+      $idEmpresa = $this->session->userdata('UsIdEmpresa');
       
-      $datos=array('miSucursal'=>$miSucursal,
-                  'ControlName'=>$ControlName,
-                  'btnName'=>$btnName,
-                  'idEmpresa'=>$idEmpresa);                   
+      $datos=array(
+        'miSucursal'=>$miSucursal,
+        'ControlName'=>$ControlName,
+        'btnName'=>$btnName,
+        'idEmpresa'=>$idEmpresa);           
 
       $this->load->view('proyectos/_formSucursal',$datos);
     }
@@ -122,10 +122,7 @@
     
     public function descargar()
     {
-
       // instantiate and use the dompdf class
-
-
       $file_name = 'google_chart.pdf';
       $html = '<link rel="stylesheet" href="bootstrap.min.css">';
       $html .= $_POST["hidden_html"];

@@ -326,15 +326,11 @@ class Sqlconsultas extends CI_Model
    
   	//Modificado Gio 01-02-2020
 	public function graficoLinea($Rut=0)
-	{ 
-	    
+	{ 	    
 		$UsRut = $this->session->userdata('UsRut');
 		$UsIdPerfil = $this->session->userdata('UsIdPerfil');
 		$r = substr($this->session->userdata('UsRut'), 0, 2);
 		$c = strlen($this->session->userdata('UsRut'));
-
-      	
-
 		// if($UsIdPerfil==3 && $r>40 && $c=10){
 		if($UsIdPerfil==399 && $r>40  )
 		{
@@ -448,6 +444,7 @@ class Sqlconsultas extends CI_Model
         else
         {
 			$a='"2-01-06-300"';
+			echo 'Aqui entro '
 			$sql = "
 			SELECT * FROM (select top 30 sum(CONVERT(INT,cargasoft_file_detalle.MontoHaberMonedaBase)) AS monto, concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as Fecha FROM cargasoft_file_resumen AS t1 INNER JOIN cargasoft_file_comprobantecarga AS t2 ON t1.IdProceso = t2.IdProceso INNER JOIN cargasoft_file_estados ON t1.CodigoEstado =cargasoft_file_estados.CodigoEstado LEFT OUTER JOIN cargasoft_file_detalle ON t1.IdProceso = cargasoft_file_detalle.IdProceso WHERE (t1.NombreArchivo LIKE 'NCMH_2%') AND (cargasoft_file_detalle.CuentaContable = '$a') GROUP by concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) order by Fecha Desc) FF	ORDER BY Fecha ASC";
         }

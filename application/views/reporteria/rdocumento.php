@@ -3,46 +3,43 @@
 <div class="container">
     <div class="row">
         <div clasS="col">
-            <canvas id="lineChart"></canvas>
+          <canvas id="lineChart"></canvas>
         </div>
         <div clasS="col">
-
-             <canvas id="barChart"></canvas>
+          <canvas id="barChart"></canvas>
         </div>
     </div>
 </div>
 
 <hr><!--
-<div class="container">
-    <div class="row">
-        <div clasS="col">
-              <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-<button class="btn invisible" id="backButton">< Back</button>
+      <div class="container">
+        <div class="row">
+          <div clasS="col">
+            <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+            <button class="btn invisible" id="backButton">< Back</button>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
+      <hr> -->
+      <!--   <a type="button" target="_blank" href="<?php echo base_url();?>rdocumento/probando" class="btn btn-danger">Reporte Completo</a>
+    -->
 
-<hr> -->
-
-<!--   <a type="button" target="_blank" href="<?php echo base_url();?>rdocumento/probando" class="btn btn-danger">Reporte Completo</a>
-
- -->
 <?php $UsIdPerfil = $this->session->userdata('UsIdPerfil');
-        if($UsIdPerfil==2){?>
-        <div class="container">
-<?=form_open(base_url()."rdocumento")?>
-<select id="xxx" name="xxx" class="mdb-select md-form" >
-  <option value="" disabled selected>Buscar por Rut</option>
+  if($UsIdPerfil==2){?>
+    <div class="container">
+      <?=form_open(base_url()."rdocumento")?>
+      <select id="xxx" name="xxx" class="mdb-select md-form" >
+        <option value="" disabled selected>Buscar por Rut</option>
         <?php foreach ($consultaRutDoctor as $doc) { ?>                
                 <option value="<?=$doc['RutCliente']?>"  ><?=$doc['RutCliente']?></option>';
                 <?php } ?>
-</select>
-
-  <button class="btn btn-primary"> Buscar Doctor </button>
-<?=form_close()?>
- 
- </div>
-<?php } ?>
+      </select>
+      <button class="btn btn-primary"> Buscar Doctor </button>
+      <?=form_close()?>
+    </div>
+    <?php 
+  } 
+?>
 
 
 
@@ -51,7 +48,7 @@
         
 <!--Accordion wrapper-->
 <div class="accordion md-accordion accordion-blocks" id="accordionEx78" role="tablist" aria-multiselectable="true">
-<div class="card">
+  <div class="card">
     <!-- Card header -->
     <div class="card-header" role="tab" id="headingUnfiled">
 
@@ -118,10 +115,10 @@
                     </tr>
                   </tfooter>
           </table>
+        </div>
+      </div>
     </div>
-    </div>
-    </div>
-</div>
+  </div>
 
 </div>
 
