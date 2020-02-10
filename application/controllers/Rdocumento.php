@@ -52,7 +52,7 @@
       }     
           
     }
-
+    /*
     public function GraficoRut()
     {          
       $idUser = $this->session->userdata('UsId');
@@ -77,7 +77,7 @@
       $this->load->view('reporteria/rdocumento');
       $dataFooter=array('scripts'=> "<script src='".base_url()."js/sucursales.js'></script>");
       $this->load->view('footer',$dataFooter);
-    }
+    }*/
 
     public function verHtml()
     {
