@@ -325,7 +325,7 @@ class Sqlconsultas extends CI_Model
   }
    
   	//Modificado Gio 01-02-2020
-	/*public function graficoLinea($Rut=0)
+	public function graficoLinea($Rut=0)
 	{ 	    
 		$UsRut = $this->session->userdata('UsRut');
 		$UsIdPerfil = $this->session->userdata('UsIdPerfil');
@@ -350,6 +350,7 @@ class Sqlconsultas extends CI_Model
 
     	elseif($UsIdPerfil==3 )
     	{
+			echo 'entro aqui 14';
 			$a='"2-01-04-400"';
 			$sql = "    
 			SELECT * FROM (SELECT top 30 sum(CONVERT(INT,cargasoft_file_detalle.MontoHaberMonedaBase)) AS monto, 
@@ -364,6 +365,7 @@ class Sqlconsultas extends CI_Model
         }       
         elseif(!empty($Rut))
         {
+			echo 'entro aqui 13';
 			$a='"2-01-04-400"';
 			$b="mon_mon_val_hab";
 			$c='"';
@@ -371,6 +373,7 @@ class Sqlconsultas extends CI_Model
         }        
 		else
 		{
+			echo 'entro aqui 12';
 			$a='"2-01-04-400"';
 			$b='mon_mon_val_hab';
     		$sql = "SELECT * FROM (SELECT TOP 30 sum(CONVERT(INT,cargasoft_file_detalle.MontoHaberMonedaBase)) AS monto 
@@ -379,7 +382,7 @@ class Sqlconsultas extends CI_Model
 
 		$query = $this->BASE_DE_DATOS_LOCAL->query($sql);
 		return $query->result_array();
-	}*/
+	}
 	//Modificado Gio 01-02-2020
 	public function graficoBarra($Rut=0)
 	{
