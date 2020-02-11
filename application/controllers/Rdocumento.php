@@ -52,33 +52,7 @@
       }     
           
     }
-    /*
-    public function GraficoRut()
-    {          
-      $idUser = $this->session->userdata('UsId');
-      $user=$this->consultas->getUsers($idUser);
-      $idEmpresa = $this->session->userdata('UsIdEmpresa');
-      $sucursal = $this->consultas_adm->consultaGral("proy_sucursal","SucIdEmpresa",$idEmpresa,1);
-
-      $modulos = $this->consultas_adm->getmenu_modulos();
-      $modulos_uno = $this->consultas_adm->getmenu_modulos_uno();
-
-      $grafico = $this->sqlconsultas->graficoLinea('11210960-9');
-      $dataSidebar['graficoLinea']=$grafico;
-      $graficoBarra = $this->sqlconsultas->graficoBarra('11210960-9');
-      $dataSidebar['graficoBarra']=$graficoBarra;
-      $prueba = $this->sqlconsultas->prueba();
-      $dataSidebar['sucursal']=$sucursal;
-      $dataSidebar['modulos']=$modulos;
-      $dataSidebar['modulos_uno']=$modulos_uno;
-      $dataSidebar['usuario']=$user;
-      $dataSidebar['prueba']=$prueba;
-      $this->load->view('header',$dataSidebar);
-      $this->load->view('reporteria/rdocumento');
-      $dataFooter=array('scripts'=> "<script src='".base_url()."js/sucursales.js'></script>");
-      $this->load->view('footer',$dataFooter);
-    }*/
-
+    
     public function verHtml()
     {
       $this->load->view('proyectos/_formSucursales');
