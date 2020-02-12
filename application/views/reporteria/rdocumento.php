@@ -488,14 +488,12 @@ language: {
   $(document).ready( function () {
 
    $('.datepicker').pickadate({
-today: '',
-format: 'yyyy-mm-dd',
-formatSubmit: 'yyyy-mm-dd',
-clear: 'Clear selection',
-close: 'Cancel'
-})
-
-} );
+          today: '',
+          format: 'yyyy-mm-dd',
+          formatSubmit: 'yyyy-mm-dd',
+          clear: 'Clear selection',
+          close: 'Cancel'})
+  } );
  
   </script>
 

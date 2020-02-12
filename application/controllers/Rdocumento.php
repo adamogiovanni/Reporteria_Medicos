@@ -31,7 +31,6 @@
 
         $modulos = $this->consultas_adm->getmenu_modulos();
         $modulos_uno = $this->consultas_adm->getmenu_modulos_uno();
-
         
         $consultaRutDoctor = $this->consultas->consultaRutDoctor();
         $dataSidebar['consultaRutDoctor']=$consultaRutDoctor;
@@ -107,8 +106,53 @@
       $pdf->load_html(utf8_decode($html));
       $pdf->render();
       $pdf->stream($file_name, array("Attachment" => false));
+    }
 
-
+    public function consultadevengo()
+	  {
+      $min = $_POST['min'];
+      $max = $_POST['max'];
+      $data = [];
+      if($min==0)
+      {
+        $prueba = $this->sqlconsultas->devengo1();
+        foreach($prueba as $pru)
+        {
+          $data[] = array(
+          $pru['Empresa'],
+          $pru['ID'],
+          $pru['TipoDocumento'],
+          $pru['Valor_Neto'],
+          $pru['ValorRetencion'],                
+          $pru['NombreEstado'],
+          $pru['NroComprobante'],
+          $pru['FechaComprobante'],
+          $pru['Observacion'],                  
+          $pru['Rut_Doctor']);
+        }
+      }
+      else
+      {   
+        $prueba = $this->sqlconsultas->devengo2($min,$max);
+        foreach($prueba as $pru)
+        {
+          $data[] = array(
+          $pru['Empresa'],
+          $pru['ID'],
+          $pru['TipoDocumento'],
+          $pru['Valor_Neto'],
+          $pru['ValorRetencion'],                
+          $pru['NombreEstado'],
+          $pru['NroComprobante'],
+          $pru['FechaComprobante'],
+          $pru['Observacion'],                  
+          $pru['Rut_Doctor']);
+        }
+      }
+      $result = array(
+          "data" => $data);
+      //$return = $this->ion_auth->rangeDate($start_date,$end_date);  
+      echo json_encode($result);
     }
   } 
 ?>
