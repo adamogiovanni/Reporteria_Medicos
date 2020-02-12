@@ -35,7 +35,7 @@
         
         $consultaRutDoctor = $this->consultas->consultaRutDoctor();
         $dataSidebar['consultaRutDoctor']=$consultaRutDoctor;
-        $grafico = $this->sqlconsultas->graficoLinea($UsRut);
+        $grafico = $this->sqlconsultas->graficoLinea($x);
         $dataSidebar['graficoLinea']=$grafico;
         
         $graficoBarra = $this->sqlconsultas->graficoBarra($x);
