@@ -328,6 +328,7 @@ class Sqlconsultas extends CI_Model
 	public function graficoLinea($Rut=0)
 	{ 	    
 		$UsRut = $this->session->userdata('UsRut');
+		$Rut='"'.$UsRut.'"';
 		$UsIdPerfil = $this->session->userdata('UsIdPerfil');
 		$r = substr($this->session->userdata('UsRut'), 0, 2);
 		$c = strlen($this->session->userdata('UsRut'));
@@ -351,9 +352,9 @@ class Sqlconsultas extends CI_Model
     	elseif($UsIdPerfil==3 )
     	{
 			$a='"2-01-04-400"';
-			echo 'entro aqui 13 el ru :'.$UsRut;
+			//echo 'entro aqui 13 el ru :'.$UsRut;
 			$sql = "SELECT * FROM (SELECT top 30 sum(CONVERT(INT,cargasoft_file_detalle.MontoHaberMonedaBase)) AS monto, 
-			concat(SUBSTRING(t2.FechaComprobante, 1, 4),'/',SUBSTRING(t2.FechaComprobante, 5, 2),'/',SUBSTRING(t2.FechaComprobante, 7, 2)) as Fecha FROM cargasoft_file_resumen AS t1 INNER JOIN cargasoft_file_comprobantecarga AS t2 ON t1.IdProceso = t2.IdProceso INNER JOIN cargasoft_file_estados ON t1.CodigoEstado = cargasoft_file_estados.CodigoEstado LEFT OUTER JOIN cargasoft_file_detalle ON t1.IdProceso = cargasoft_file_detalle.IdProceso WHERE (t1.NombreArchivo LIKE 'NCMH_1%') and (cargasoft_file_detalle.CuentaContable = '$a') and  (cargasoft_file_detalle.codigoAuxiliar = '$UsRut') GROUP BY concat(SUBSTRING(t2.FechaComprobante, 1, 4),'/',SUBSTRING(t2.FechaComprobante, 5, 2),'/',SUBSTRING(t2.FechaComprobante, 7, 2)) ORDER BY Fecha  desc ) FE order by Fecha asc";        
+			concat(SUBSTRING(t2.FechaComprobante, 1, 4),'/',SUBSTRING(t2.FechaComprobante, 5, 2),'/',SUBSTRING(t2.FechaComprobante, 7, 2)) as Fecha FROM cargasoft_file_resumen AS t1 INNER JOIN cargasoft_file_comprobantecarga AS t2 ON t1.IdProceso = t2.IdProceso INNER JOIN cargasoft_file_estados ON t1.CodigoEstado = cargasoft_file_estados.CodigoEstado LEFT OUTER JOIN cargasoft_file_detalle ON t1.IdProceso = cargasoft_file_detalle.IdProceso WHERE (t1.NombreArchivo LIKE 'NCMH_1%') and (cargasoft_file_detalle.CuentaContable = '$a') and  (cargasoft_file_detalle.codigoAuxiliar = '$Rut') GROUP BY concat(SUBSTRING(t2.FechaComprobante, 1, 4),'/',SUBSTRING(t2.FechaComprobante, 5, 2),'/',SUBSTRING(t2.FechaComprobante, 7, 2)) ORDER BY Fecha  desc ) FE order by Fecha asc";        
         }       
         elseif(!empty($Rut))
         {
