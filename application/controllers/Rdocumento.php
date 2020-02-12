@@ -16,6 +16,7 @@
       $x=$this->input->post('xxx');
       $idUser = $this->session->userdata('UsId');
       $user=$this->consultas->getUsers($idUser);
+      $UsRut = $this->session->userdata('UsRut');
       if(!$idUser)
       {
         $data['error'] ="";
@@ -34,7 +35,7 @@
         
         $consultaRutDoctor = $this->consultas->consultaRutDoctor();
         $dataSidebar['consultaRutDoctor']=$consultaRutDoctor;
-        $grafico = $this->sqlconsultas->graficoLinea($x);
+        $grafico = $this->sqlconsultas->graficoLinea($UsRut);
         $dataSidebar['graficoLinea']=$grafico;
         
         $graficoBarra = $this->sqlconsultas->graficoBarra($x);
