@@ -373,7 +373,7 @@ class Sqlconsultas extends CI_Model
         }        
 		else
 		{
-			echo 'entro aqui 12';
+			
 			$a='"2-01-04-400"';
 			$b='mon_mon_val_hab';
     		$sql = "SELECT * FROM (SELECT TOP 30 sum(CONVERT(INT,cargasoft_file_detalle.MontoHaberMonedaBase)) AS monto 
@@ -422,7 +422,7 @@ class Sqlconsultas extends CI_Model
         else
         {
 			$a='"2-01-06-300"';
-			echo 'Aqui entro ';
+			
 			$sql = "
 			SELECT * FROM (select top 30 sum(CONVERT(INT,cargasoft_file_detalle.MontoHaberMonedaBase)) AS monto, concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as Fecha FROM cargasoft_file_resumen AS t1 INNER JOIN cargasoft_file_comprobantecarga AS t2 ON t1.IdProceso = t2.IdProceso INNER JOIN cargasoft_file_estados ON t1.CodigoEstado =cargasoft_file_estados.CodigoEstado LEFT OUTER JOIN cargasoft_file_detalle ON t1.IdProceso = cargasoft_file_detalle.IdProceso WHERE (t1.NombreArchivo LIKE 'NCMH_2%') AND (cargasoft_file_detalle.CuentaContable = '$a') GROUP by concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) order by Fecha Desc) FF	ORDER BY Fecha ASC";
         }
