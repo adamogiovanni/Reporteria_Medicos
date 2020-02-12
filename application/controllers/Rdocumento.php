@@ -14,7 +14,6 @@
     {
       $x="";
       $x=$this->input->post('xxx');
-      echo $x;
       $idUser = $this->session->userdata('UsId');
       $user=$this->consultas->getUsers($idUser);
       if(!$idUser)
