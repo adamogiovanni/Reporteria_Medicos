@@ -39,12 +39,12 @@
         
         $graficoBarra = $this->sqlconsultas->graficoBarra($x);
         $dataSidebar['graficoBarra']=$graficoBarra;
-        $prueba = $this->sqlconsultas->prueba();
+        //$prueba = $this->sqlconsultas->prueba();
         $dataSidebar['sucursal']=$sucursal;
         $dataSidebar['modulos']=$modulos;
         $dataSidebar['modulos_uno']=$modulos_uno;
         $dataSidebar['usuario']=$user;
-        $dataSidebar['prueba']=$prueba;
+      //  $dataSidebar['prueba']=$prueba;
         $this->load->view('header',$dataSidebar);
         $this->load->view('reporteria/rdocumento');
         $dataFooter=array('scripts'=> "<script src='".base_url()."js/sucursales.js'></script>");
@@ -201,5 +201,8 @@
       //$return = $this->ion_auth->rangeDate($start_date,$end_date);     
       echo json_encode($result); 
     }
+
+
+
   } 
 ?>
