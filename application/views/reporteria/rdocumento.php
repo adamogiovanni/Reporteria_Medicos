@@ -167,7 +167,7 @@
                   <thead>
                     <tr>
                       <th>Empresa</th>
-                      <!-- <th>ID</th>-->
+                       <th>ID</th>-->
                       <th>Tipo Documento</th>
                       <th>Valor Neto</th>
                       <th>Valor Retencion</th>                      
@@ -182,7 +182,7 @@
                   <tfooter>
                     <tr>
                       <th>Empresa</th>
-                       <!-- <th>ID</th>-->
+                       <th>ID</th>
                       <th>Tipo Documento</th>
                       <th>Valor Neto</th>
                       <th>Valor Retencion</th>                         
@@ -245,7 +245,7 @@
 
                   <thead>
                     <tr>
-                      <!-- <th>ID</th>-->
+                      <th>ID</th>
                       <th>Empresa</th>
                       <th>Correlativo</th>
                       <th>Fecha_Proceso</th>                     
@@ -261,7 +261,7 @@
                   <tfooter>
                     <tr>
 
-                      <!-- <th>ID</th>-->
+                      <th>ID</th>
                       <th>Empresa</th>
                       <th>Correlativo</th>
                       <th>Fecha_Proceso</th>                     
@@ -335,7 +335,7 @@ language: {
     }
   ,"ajax": {
     data:parametros,
-    url:'rdocumento/consultarango',
+    url:'rdocumento/consultaprovision',
     type: 'POST'
   },
   dom: 'Bfrtip',
@@ -424,7 +424,7 @@ language: {
     }
   ,"ajax": {
     data:parametros,
-    url:'rdocumento/consultarango',
+    url:'rdocumento/consultaprovision',
     type: 'POST'
   },
   dom: 'Bfrtip',

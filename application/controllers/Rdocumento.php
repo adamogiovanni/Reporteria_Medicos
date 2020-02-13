@@ -202,7 +202,46 @@
       echo json_encode($result); 
     }
 
-
-
-  } 
-?>
+    public function consultaprovision()
+    {
+    $min = $_POST['min'];
+    $max = $_POST['max'];
+    $data = [];
+    if($min==0)
+    {
+      $prueba = $this->sqlconsultas->consultaprovision1();
+      foreach($prueba as $pru)
+      {
+        $data[] = array(
+        $pru['Empresa'],
+        $pru['Caso'],
+        '$'.number_format($pru['Valor'], 0, ",", "."),
+        $pru['NombreEstado'],
+        $pru['NroComprobante'],
+        $pru['FechaComprobante'],
+        $pru['Rut_Doctor'],
+        $pru['Observacion']);
+      }
+    }
+    else
+    {
+      $prueba = $this->sqlconsultas->consultaprovision2($min,$max);
+      foreach($prueba as $pru)
+      {
+        $data[] = array(
+        $pru['Empresa'],
+        $pru['Caso'],
+        $pru['Valor'],
+        $pru['NombreEstado'],
+        $pru['NroComprobante'],
+        $pru['FechaComprobante'],
+        $pru['Rut_Doctor'],
+        $pru['Observacion']);
+      }
+    }  
+    $result = array(
+      "data" => $data);
+    //$return = $this->ion_auth->rangeDate($start_date,$end_date);
+    echo json_encode($result);
+  }
+} ?>

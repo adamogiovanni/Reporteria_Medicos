@@ -10,9 +10,10 @@ class Sqlconsultas extends CI_Model
 
 	//Modificada por Gio 01-02-2020 
 	//Evita que entre a la primera condicion 
-	public function prueba()
+	public function consultaprovision1()
 	{
 		$UsRut = $this->session->userdata('UsRut');
+		$Rut='"'.$UsRut.'"';
 		$UsIdPerfil = $this->session->userdata('UsIdPerfil');
 		$r = substr($this->session->userdata('UsRut'), 0, 2);
 		$c = strlen($this->session->userdata('UsRut'));
@@ -34,10 +35,10 @@ class Sqlconsultas extends CI_Model
 		}
         else if($UsIdPerfil==3 )
         {
-			//echo 'el rut '.$UsRut ;
+			
 			$x='"';
 			$a='"2-01-04-400"';
-			$sql = "SELECT top 3000 t1.Empresa,cargasoft_file_detalle.NroDocumento AS Caso,cargasoft_file_detalle.DescripcionMovimiento AS Observacion,REPLACE(cargasoft_file_detalle.CodigoAuxiliar,'$x','') AS Rut_Doctor,	cargasoft_file_detalle.MontoHaberMonedaBase AS Valor,'Provisión' as NombreEstado, t2.NroComprobante,concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante FROM cargasoft_file_resumen AS t1 INNER JOIN cargasoft_file_comprobantecarga AS t2 ON t1.IdProceso = t2.IdProceso INNER JOIN cargasoft_file_estados ON t1.CodigoEstado = cargasoft_file_estados.CodigoEstado LEFT OUTER JOIN cargasoft_file_detalle ON t1.IdProceso = cargasoft_file_detalle.IdProceso WHERE (t1.NombreArchivo LIKE 'NCMH_1%') and (cargasoft_file_detalle.CuentaContable = '$a') AND (cargasoft_file_detalle.CodigoAuxiliar= '$UsRut') ORDER BY  FechaComprobante DESC"; 
+			$sql = "SELECT top 3000 t1.Empresa,cargasoft_file_detalle.NroDocumento AS Caso,cargasoft_file_detalle.DescripcionMovimiento AS Observacion,REPLACE(cargasoft_file_detalle.CodigoAuxiliar,'$x','') AS Rut_Doctor,	cargasoft_file_detalle.MontoHaberMonedaBase AS Valor,'Provisión' as NombreEstado, t2.NroComprobante,concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante FROM cargasoft_file_resumen AS t1 INNER JOIN cargasoft_file_comprobantecarga AS t2 ON t1.IdProceso = t2.IdProceso INNER JOIN cargasoft_file_estados ON t1.CodigoEstado = cargasoft_file_estados.CodigoEstado LEFT OUTER JOIN cargasoft_file_detalle ON t1.IdProceso = cargasoft_file_detalle.IdProceso WHERE (t1.NombreArchivo LIKE 'NCMH_1%') and (cargasoft_file_detalle.CuentaContable = '$a') AND (cargasoft_file_detalle.CodigoAuxiliar= '$Rut') ORDER BY  FechaComprobante DESC"; 
         }
         else
         {
@@ -50,84 +51,53 @@ class Sqlconsultas extends CI_Model
 		return $query->result_array();
 	}
 
-	public function prueba2($min,$max)
+	public function consultaprovision2($min,$max)
+	{
+		$UsRut = $this->session->userdata('UsRut');
+		$Rut='"'.$UsRut.'"';
+		$UsIdPerfil = $this->session->userdata('UsIdPerfil');
+		$r = substr($this->session->userdata('UsRut'), 0, 2);
+		$c = strlen($this->session->userdata('UsRut'));
+		
+		if($UsIdPerfil==399 && $r>40 && $c=10)
 		{
-			     $UsRut = $this->session->userdata('UsRut');
-		      $UsIdPerfil = $this->session->userdata('UsIdPerfil');
-		      $r = substr($this->session->userdata('UsRut'), 0, 2);
-		      $c = strlen($this->session->userdata('UsRut'));
-		      if($UsIdPerfil==3 && $r>40 && $c=10){
-				$x='"';
-				$a='"2-01-04-400"';
+			$x='"';
+			$a='"2-01-04-400"';
 
-				$consulta = "
-				SELECT   UsRut FROM   gen_usuarios where UsRutEmpresa='$UsRut'
-				";
-				$result = $this->db->query($consulta);
-				$resultado="";
-				foreach ($result->result() as $row)
-				{
-						$resultado = $resultado.",'".$row->UsRut."'";
-				}
-				$resultado = substr($resultado, 1); 
-
-	           $sql = "
-			   SELECT top 3000 t1.Empresa,t1.IdProceso AS ID, cargasoft_file_detalle.NroDocumento AS Caso,
-			   cargasoft_file_detalle.DescripcionMovimiento AS Observacion,
-			   REPLACE(cargasoft_file_detalle.CodigoAuxiliar,'$x','') AS Rut_Doctor,
-				cargasoft_file_detalle.MontoHaberMonedaBase AS Valor, 
-				'Proceso de pago' as NombreEstado, 
-				t2.NroComprobante,
-				concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante 
-				FROM cargasoft_file_resumen AS t1 
-				INNER JOIN cargasoft_file_comprobantecarga AS t2 ON t1.IdProceso = t2.IdProceso 
-				INNER JOIN cargasoft_file_estados ON t1.CodigoEstado = cargasoft_file_estados.CodigoEstado 
-				LEFT OUTER JOIN cargasoft_file_detalle ON t1.IdProceso = cargasoft_file_detalle.IdProceso 
-				WHERE (t1.NombreArchivo LIKE 'NCMH_1%') 
-				and (cargasoft_file_detalle.CuentaContable = '$a') 
-				AND (REPLACE(cargasoft_file_detalle.CodigoAuxiliar,'$x','') in (".$resultado.")) AND concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) >'$min' and concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) <'$max' ";
-	        }
-	        else if($UsIdPerfil==3 ){
-				$x='"';
-				$a='"2-01-04-400"';
-	           $sql = "
-			   SELECT top 3000 t1.Empresa,t1.IdProceso AS ID,
-				cargasoft_file_detalle.NroDocumento AS Caso,
-				cargasoft_file_detalle.DescripcionMovimiento AS Observacion,
-				REPLACE(cargasoft_file_detalle.CodigoAuxiliar,'$x','') AS Rut_Doctor,
-				 cargasoft_file_detalle.MontoHaberMonedaBase AS Valor,
-				 'Proceso de pago' as NombreEstado, t2.NroComprobante,
-				  concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante 
-				  FROM cargasoft_file_resumen AS t1 
-				  INNER JOIN cargasoft_file_comprobantecarga AS t2 ON t1.IdProceso = t2.IdProceso 
-				  INNER JOIN cargasoft_file_estados ON t1.CodigoEstado = cargasoft_file_estados.CodigoEstado 
-				  LEFT OUTER JOIN cargasoft_file_detalle ON t1.IdProceso = cargasoft_file_detalle.IdProceso 
-				  WHERE (t1.NombreArchivo LIKE 'NCMH_1%') 
-				  and (cargasoft_file_detalle.CuentaContable = '$a') 
-				  AND (REPLACE(cargasoft_file_detalle.CodigoAuxiliar,'$x','') = '$UsRut') AND concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) >'$min' and concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) <'$max' ";
-	        }else{
-				$a = '"2-01-04-400"';
-				$x='"';
-	           $sql = "
-			   SELECT top 3000 t1.Empresa,t1.IdProceso AS ID, 
-				cargasoft_file_detalle.NroDocumento AS Caso,cargasoft_file_detalle.DescripcionMovimiento AS Observacion,
-				REPLACE(cargasoft_file_detalle.CodigoAuxiliar,'$x','') AS Rut_Doctor, 
-				cargasoft_file_detalle.MontoHaberMonedaBase AS Valor, 
-				'Proceso de pago' as NombreEstado, t2.NroComprobante,
-				concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante 
-				FROM cargasoft_file_resumen AS t1 INNER JOIN cargasoft_file_comprobantecarga AS t2 ON t1.IdProceso = t2.IdProceso 
-				INNER JOIN cargasoft_file_estados ON t1.CodigoEstado = cargasoft_file_estados.CodigoEstado 
-				LEFT OUTER JOIN cargasoft_file_detalle ON t1.IdProceso = cargasoft_file_detalle.IdProceso 
-				WHERE (t1.NombreArchivo LIKE 'NCMH_1%') 
-				and (cargasoft_file_detalle.CuentaContable = '$a')
-				AND concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) >'$min' and concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) <'$max' 
+			$consulta = "
+			SELECT   UsRut FROM   gen_usuarios where UsRutEmpresa='$UsRut'
 			";
-	        }
+			$result = $this->db->query($consulta);
+			$resultado="";
+			foreach ($result->result() as $row)
+			{
+				$resultado = $resultado.",'".$row->UsRut."'";
+			}
+			$resultado = substr($resultado, 1); 
 
-
-	        
-	        $query = $this->BASE_DE_DATOS_LOCAL->query($sql);
-			return $query->result_array();
+			$sql = "SELECT top 3000 t1.Empresa,t1.IdProceso AS ID, cargasoft_file_detalle.NroDocumento AS Caso,
+			cargasoft_file_detalle.DescripcionMovimiento AS Observacion, REPLACE(cargasoft_file_detalle.CodigoAuxiliar,'$x','') AS Rut_Doctor, cargasoft_file_detalle.MontoHaberMonedaBase AS Valor, 'Proceso de pago' as NombreEstado, t2.NroComprobante,	concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante 
+			FROM cargasoft_file_resumen AS t1 INNER JOIN cargasoft_file_comprobantecarga AS t2 ON t1.IdProceso = t2.IdProceso  INNER JOIN cargasoft_file_estados ON t1.CodigoEstado = cargasoft_file_estados.CodigoEstado 
+			LEFT OUTER JOIN cargasoft_file_detalle ON t1.IdProceso = cargasoft_file_detalle.IdProceso 
+			WHERE (t1.NombreArchivo LIKE 'NCMH_1%') and (cargasoft_file_detalle.CuentaContable = '$a') 
+			AND (REPLACE(cargasoft_file_detalle.CodigoAuxiliar,'$x','') in (".$resultado.")) AND concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) >'$min' and concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) <'$max' ";
+		}
+		else if($UsIdPerfil==3 )
+		{
+			$x='"';
+			$a='"2-01-04-400"';
+			$sql = "SELECT top 3000 t1.Empresa,t1.IdProceso AS ID, cargasoft_file_detalle.NroDocumento AS Caso,
+			cargasoft_file_detalle.DescripcionMovimiento AS Observacion, REPLACE(cargasoft_file_detalle.CodigoAuxiliar,'$x','') AS Rut_Doctor, cargasoft_file_detalle.MontoHaberMonedaBase AS Valor,'Proceso de pago' as NombreEstado, t2.NroComprobante, concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante FROM cargasoft_file_resumen AS t1 INNER JOIN cargasoft_file_comprobantecarga AS t2 ON t1.IdProceso = t2.IdProceso 	INNER JOIN cargasoft_file_estados ON t1.CodigoEstado = cargasoft_file_estados.CodigoEstado  LEFT OUTER JOIN cargasoft_file_detalle ON t1.IdProceso = cargasoft_file_detalle.IdProceso  WHERE (t1.NombreArchivo LIKE 'NCMH_1%') 	and (cargasoft_file_detalle.CuentaContable = '$a')  AND (cargasoft_file_detalle.CodigoAuxiliar) = '$Rut') AND concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) >'$min' and concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) <'$max' ";
+		}
+		else
+		{
+			$a = '"2-01-04-400"';
+			$x='"';
+			$sql = "SELECT top 3000 t1.Empresa,t1.IdProceso AS ID,  cargasoft_file_detalle.NroDocumento AS Caso,cargasoft_file_detalle.DescripcionMovimiento AS Observacion, REPLACE(cargasoft_file_detalle.CodigoAuxiliar,'$x','') AS Rut_Doctor, 	cargasoft_file_detalle.MontoHaberMonedaBase AS Valor, 'Proceso de pago' as NombreEstado, t2.NroComprobante,	concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante 	FROM cargasoft_file_resumen AS t1 INNER JOIN cargasoft_file_comprobantecarga AS t2 ON t1.IdProceso = t2.IdProceso 
+			INNER JOIN cargasoft_file_estados ON t1.CodigoEstado = cargasoft_file_estados.CodigoEstado 	LEFT OUTER JOIN cargasoft_file_detalle ON t1.IdProceso = cargasoft_file_detalle.IdProceso WHERE (t1.NombreArchivo LIKE 'NCMH_1%') and (cargasoft_file_detalle.CuentaContable = '$a') AND concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) >'$min' and concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) <'$max' ";
+		}	
+		$query = $this->BASE_DE_DATOS_LOCAL->query($sql);
+		return $query->result_array();
 	}
 	
 	//Evita que entre a la primera condicion 
@@ -221,7 +191,7 @@ class Sqlconsultas extends CI_Model
 			$resultado="";
 			foreach ($result->result() as $row)
 			{
-					$resultado = $resultado.",'".$row->UsRut."'";
+				$resultado = $resultado.",'".$row->UsRut."'";
 			}
 			$resultado = substr($resultado, 1); 
 
@@ -229,7 +199,7 @@ class Sqlconsultas extends CI_Model
 	  	}
 	  	else if($UsIdPerfil==3)
 		{
-			$sql = "SELECT  t1.IdProceso AS Id, t1.Empresa, t1.NombreArchivo AS Archivo, t1.FechaProceso AS Fecha_Proceso, t2.Correlativo, t2.RutCliente AS Rut, t2.NroDocumento AS Nro_Doc_Cancelado, 	t2.MontoDocumento AS Monto_Pagado, t2.NroComprobante AS Nro_Comprobante, concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante, t2.FechaProceso AS Fecha_de_Proceso_Pago	FROM cargasoft_file_resumen AS t1 INNER JOIN cargasoft_file_comprobantepagodevengo AS t2 ON t1.IdProceso = t2.IdProceso where t2.RutCliente='$Rut'";		  
+			$sql = "SELECT  t1.IdProceso AS Id, t1.Empresa, t1.NombreArchivo AS Archivo, t1.FechaProceso AS Fecha_Proceso, t2.Correlativo, t2.RutCliente AS Rut, t2.NroDocumento AS Nro_Doc_Cancelado, 	t2.MontoDocumento AS Monto_Pagado, t2.NroComprobante AS Nro_Comprobante, concat(SUBSTRING(t2.FechaComprobante, 1, 4),'-',SUBSTRING(t2.FechaComprobante, 5, 2),'-',SUBSTRING(t2.FechaComprobante, 7, 2)) as FechaComprobante, t2.FechaProceso AS Fecha_de_Proceso_Pago	FROM cargasoft_file_resumen AS t1 INNER JOIN cargasoft_file_comprobantepagodevengo AS t2 ON t1.IdProceso = t2.IdProceso where t2.RutCliente='$Rut'";	  
 		}
 		else
 		{
