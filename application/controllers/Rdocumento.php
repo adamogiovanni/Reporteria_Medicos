@@ -154,5 +154,52 @@
       //$return = $this->ion_auth->rangeDate($start_date,$end_date);  
       echo json_encode($result);
     }
+
+    public function consultapago()
+    {
+      $min = $_POST['min'];
+      $max = $_POST['max'];
+      $data = [];
+      if($min==0)
+      {
+        $prueba = $this->sqlconsultas->pago1();
+        foreach($prueba as $pru)
+        {
+          $data[] = array(
+          $pru['Id'],
+          $pru['Empresa'],
+          $pru['Correlativo'],
+          $pru['Fecha_Proceso'],
+          $pru['Nro_Doc_Cancelado'],
+          $pru['Monto_Pagado'],
+          $pru['Nro_Comprobante'],
+          $pru['FechaComprobante'],
+          $pru['Fecha_de_Proceso_Pago'],
+          $pru['Rut']);
+        }
+      }
+      else
+      {         
+        $prueba = $this->sqlconsultas->pago2($min,$max);
+        foreach($prueba as $pru)
+        {
+          $data[] = array(
+          $pru['Id'],
+          $pru['Empresa'],
+          $pru['Correlativo'],
+          $pru['Fecha_Proceso'],
+          $pru['Nro_Doc_Cancelado'],
+          $pru['Monto_Pagado'],
+          $pru['Nro_Comprobante'],
+          $pru['FechaComprobante'],
+          $pru['Fecha_de_Proceso_Pago'],
+          $pru['Rut'] );
+        }
+      }
+      $result = array(
+       "data" => $data);
+      //$return = $this->ion_auth->rangeDate($start_date,$end_date);     
+      echo json_encode($result); 
+    }
   } 
 ?>
