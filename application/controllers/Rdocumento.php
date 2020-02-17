@@ -237,7 +237,7 @@
         $pru['FechaComprobante'],
         $pru['Rut_Doctor'],
         $pru['Observacion'],
-        $pru['Valor']);
+        '$'.number_format($pru['Valor'], 0, ",", "."));
       }
     }  
     $result = array(
