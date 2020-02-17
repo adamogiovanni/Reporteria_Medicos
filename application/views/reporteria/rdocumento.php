@@ -105,13 +105,13 @@
             <tfooter>
               <tr>
                 <th>Empresa</th>
-                <th>Caso</th>
-                <th>Valor Neto</th>
+                <th>Caso</th>                
                 <th>Nombre Estado</th>
                 <th>Nro. Comprobante</th>      
                 <th>Fecha Comprobante</th>
                 <th>Rut Profesional</th>
                 <th>Observación</th> 
+                <th>Valor Neto</th>
               </tr>
             </tfooter>
             <tfoot>
