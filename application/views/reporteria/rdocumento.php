@@ -116,7 +116,7 @@
             </tfooter>
             <tfoot>
               <tr>
-                <th colspan="4" style="text-align:right">Total:</th>
+                <th colspan="8" style="text-align:right">Total:</th>
                 <th></th>
               </tr>
             </tfoot>
