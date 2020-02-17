@@ -448,7 +448,7 @@ language: {
 
     // Total over all pages
     total = api
-        .column( 8 )
+        .column( 7 )
         .data()
         .reduce( function (a, b) {
             return intVal(a) + intVal(b);
@@ -456,14 +456,14 @@ language: {
 
     // Total over this page
     pageTotal = api
-        .column( 8, { page: 'current'} )
+        .column( 7, { page: 'current'} )
         .data()
         .reduce( function (a, b) {
             return intVal(a) + intVal(b);
         }, 0 );
 
     // Update footer
-    $( api.column( 8 ).footer() ).html(
+    $( api.column( 7 ).footer() ).html(
         '$'+pageTotal +' ( $'+ total +' total)'
     );
   },
