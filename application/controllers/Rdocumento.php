@@ -221,6 +221,7 @@
         $pru['Rut_Doctor'],
         $pru['Observacion'],
         '$'.number_format($pru['Valor'], 0, ",", "."));
+        
       }
     }
     else

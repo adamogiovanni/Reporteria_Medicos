@@ -464,7 +464,7 @@ language: {
 
     // Update footer
     $( api.column( 7 ).footer() ).html(
-        '$'+pageTotal +' ( $'+ total +' total)'
+        '$'+ number_format(pageTotal, 0, ",", ".") +' ( $'+ number_format(total, 0, ",", ".") +' total)'
     );
   },
   dom: 'Bfrtip',
