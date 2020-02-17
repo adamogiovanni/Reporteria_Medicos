@@ -214,13 +214,13 @@
       {
         $data[] = array(
         $pru['Empresa'],
-        $pru['Caso'],
-        '$'.number_format($pru['Valor'], 0, ",", "."),
+        $pru['Caso'],       
         $pru['NombreEstado'],
         $pru['NroComprobante'],
         $pru['FechaComprobante'],
         $pru['Rut_Doctor'],
-        $pru['Observacion']);
+        $pru['Observacion'],
+        '$'.number_format($pru['Valor'], 0, ",", "."));
       }
     }
     else
@@ -230,13 +230,13 @@
       {
         $data[] = array(
         $pru['Empresa'],
-        $pru['Caso'],
-        $pru['Valor'],
+        $pru['Caso'],        
         $pru['NombreEstado'],
         $pru['NroComprobante'],
         $pru['FechaComprobante'],
         $pru['Rut_Doctor'],
-        $pru['Observacion']);
+        $pru['Observacion'],
+        $pru['Valor']);
       }
     }  
     $result = array(

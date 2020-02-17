@@ -92,18 +92,18 @@
             <thead>
               <tr>
                 <th>Empresa</th>
-                <th>Caso</th>
-                <th>Valor Neto</th>
+                <th>Caso</th>                
                 <th>Nombre Estado</th>
                 <th>Nro. Comprobante</th>      
                 <th>Fecha Comprobante</th>
                 <th>Rut Profesional</th>
-                <th>Observación</th>                     
+                <th>Observación</th>
+                <th>Valor Neto</th>                     
               </tr>
             </thead>
 
             <tfooter>
-              <!-- <tr>
+              <tr>
                 <th>Empresa</th>
                 <th>Caso</th>
                 <th>Valor Neto</th>
@@ -112,11 +112,11 @@
                 <th>Fecha Comprobante</th>
                 <th>Rut Profesional</th>
                 <th>Observación</th> 
-              </tr> -->
+              </tr>
             </tfooter>
             <tfoot>
               <tr>
-                <th colspan="8" style="text-align:right">Total:</th>
+                <th colspan="6" style="text-align:right">Total:</th>
                 <th></th>
               </tr>
             </tfoot>
