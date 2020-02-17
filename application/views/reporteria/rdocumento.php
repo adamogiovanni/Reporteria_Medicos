@@ -89,35 +89,37 @@
           <!--Table-->
           <table  id="example" class="table table-hover mb-0">
 
-                  <thead>
-                    <tr>
-                      <th>Empresa</th>
-                      <th>Caso</th>
-                      <th>Valor Neto</th>
-                      <th>Nombre Estado</th>
-                      <th>Nro. Comprobante</th>      
-                      <th>Fecha Comprobante</th>
-                      <th>Rut Profesional</th>
-                      <th>Observación</th>                     
-                    </tr>
-                  </thead>
+            <thead>
+              <tr>
+                <th>Empresa</th>
+                <th>Caso</th>
+                <th>Valor Neto</th>
+                <th>Nombre Estado</th>
+                <th>Nro. Comprobante</th>      
+                <th>Fecha Comprobante</th>
+                <th>Rut Profesional</th>
+                <th>Observación</th>                     
+              </tr>
+            </thead>
 
-                  <tfooter>
-                    <tr>
-                      <th>Empresa</th>
-                      <th>Caso</th>
-                      <th>Valor Neto</th>
-                      <th>Nombre Estado</th>
-                      <th>Nro. Comprobante</th>      
-                      <th>Fecha Comprobante</th>
-                      <th>Rut Profesional</th>
-                      <th>Observación</th> 
-                    </tr>
-                    <tr>
-                      <th colspan="4" style="text-align:right">Total:</th>
-                      <th></th>
-                    </tr>
-                  </tfooter>
+            <tfooter>
+              <!-- <tr>
+                <th>Empresa</th>
+                <th>Caso</th>
+                <th>Valor Neto</th>
+                <th>Nombre Estado</th>
+                <th>Nro. Comprobante</th>      
+                <th>Fecha Comprobante</th>
+                <th>Rut Profesional</th>
+                <th>Observación</th> 
+              </tr> -->
+            </tfooter>
+            <tfoot>
+              <tr>
+                <th colspan="4" style="text-align:right">Total:</th>
+                <th></th>
+              </tr>
+            </tfoot>
           </table>
         </div>
       </div>
