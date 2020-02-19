@@ -1,14 +1,6 @@
 
 <script>
-$(document).ready(function(){
-$(document).on('click', '.btnfiltro', function(){
-    
-var rutdoctor=$('#RutSelectDoctor').text();
 
-alert(rutdoctor);
-
-});
-});
 </script>
 
 
