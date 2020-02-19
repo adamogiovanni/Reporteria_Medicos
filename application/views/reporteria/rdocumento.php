@@ -34,7 +34,7 @@
                 <option value="<?=$doc['RutCliente']?>"  ><?=$doc['RutCliente']?></option>';
                 <?php } ?>
       </select>
-      <button class="btn btn-primary"> Buscar Doctor </button>
+      <button class="btn btn-primary"> Buscar Doctor BTEST </button>
       <?=form_close()?>
     </div>
     <?php 
