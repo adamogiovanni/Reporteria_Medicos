@@ -34,12 +34,16 @@ alert(rutdoctor);
       </div>
       <hr> -->
       <!--   <a type="button" target="_blank" href="<?php echo base_url();?>rdocumento/probando" class="btn btn-danger">Reporte Completo</a>
+
+      
+
+
     -->
 
 <?php $UsIdPerfil = $this->session->userdata('UsIdPerfil');
   if($UsIdPerfil==2){?>
     <div class="container">
-    <?=form_open(base_url()."rdocumento")?> 
+    
       <select id="RutSelectDoctor" name="RutSelectDoctor" class="mdb-select md-form" >
         <option value="" disabled selected>Buscar por Rut</option>
         <?php foreach ($consultaRutDoctor as $doc) { ?>                
@@ -47,7 +51,7 @@ alert(rutdoctor);
                 <?php } ?>
       </select>
       <button class="btn btn-primary btnfiltro" name="btnfiltro" id="btnfiltro"> Buscar Doctor BTEST </button>
-      <?=form_close()?>
+      
     </div>
     <?php 
   } 
