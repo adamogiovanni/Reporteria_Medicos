@@ -32,9 +32,11 @@
   if($UsIdPerfil==2){?>
     <div class="container">
       
-      <input class="form-control" placeholder="Rut Doctor" type="text" id="RutSelectDoctor" name="RutSelectDoctor" >
+      <input class="form-control" placeholder="Rut Doctor" type="text" id="RutSelectDoctor" name="RutSelectDoctor" 
+      onchange="formateaRutDoctor(this.value)"  onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+      maxlength="12">
 
-      <button class="btn btn-primary btnfiltro" name="btnfiltro" id="btnfiltro"> Buscar Doctor BTEST </button>
+      <button class="btn btn-primary btnfiltro" name="btnfiltro" id="btnfiltro"> Buscar Doctor  </button>
       
     </div>
     <?php 
