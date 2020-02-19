@@ -295,8 +295,8 @@ ORDER BY `Fecha`  desc LIMIT 30) FE order by Fecha asc";
 
     public function consultaRutDoctor(){
    
-   	//BRIANADAMO: Aqui iba esto SELECT RutCliente FROM cargasoft_file_comprobantepagodevengo GROUP by RutCliente
-	$sql = "";
+   	//BRIANADAMO: Aqui iba esto 
+	$sql = "SELECT RutCliente FROM cargasoft_file_comprobantepagodevengo GROUP by RutCliente";
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
