@@ -36,10 +36,10 @@
   if($UsIdPerfil==2){?>
     <div class="container">
     
-      <select id="RutSelectDoctor" name="RutSelectDoctor" class="mdb-select md-form" >
+      <select id="xxx" name="xxx" class="mdb-select md-form" >
         <option value="" disabled selected>Buscar por Rut</option>
         <?php foreach ($consultaRutDoctor as $doc) { ?>                
-                <option value="<?=$doc['RutCliente']?>"  ><?=$doc['RutCliente']?></option>';
+                <option value="<?=$doc['RutCliente']?>" id="RutSelectDoctor" name="RutSelectDoctor" ><?=$doc['RutCliente']?></option>';
                 <?php } ?>
       </select>
       <button class="btn btn-primary btnfiltro" name="btnfiltro" id="btnfiltro"> Buscar Doctor BTEST </button>
