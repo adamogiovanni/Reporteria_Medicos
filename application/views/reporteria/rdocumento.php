@@ -312,10 +312,14 @@ $(document).ready(function()
                     "max" : max};
 
     $('#example').dataTable( {
+
+    "search": {
+    "search": "Fred"
+    }  
       
     language: {
         processing: "<i class='fa fa-spinner fa-5x fa-spin fa-fw' aria-hidden='true'></i>",
-        
+        search: "<i class='fa fa-search' aria-hidden='true'></i>",
         lengthMenu:     "Mostrando _MENU_ casos",
         info:           "Mostrando del _START_ al _END_ de _TOTAL_ casos",
         infoEmpty:      "Mostrando 0 al 0 de 0 coincidencias",
