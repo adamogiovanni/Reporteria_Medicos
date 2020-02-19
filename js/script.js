@@ -12,6 +12,8 @@ var rutdoctor=$('#RutSelectDoctor').val();
 $("#devengo_filter input").prop( 'id', 'IDPRUEBA' );
 
 $('#IDPRUEBA').val(rutdoctor);
+document.getElementById("IDPRUEBA").click();
+
 
 });
 });
