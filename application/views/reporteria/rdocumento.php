@@ -313,7 +313,7 @@ $(document).ready(function()
 
     $('#example').dataTable( {
 
-    "search": {
+    search: {
     "search": "Fred"
     }  
       
