@@ -37,7 +37,7 @@ $('#idfiltropago').keyup();
 });
 });
 
-function formateaRutBoton(rut) {
+function formateaRutDoctor(rut) {
     
     var actual = rut.replace(/^0+/, "");
     
