@@ -8,11 +8,10 @@ $(document).on('click', '.btnfiltro', function(){
     
 var rutdoctor=$('#RutSelectDoctor').val();
 
-alert(rutdoctor);
 
 $("#devengo_filter input").prop( 'id', 'IDPRUEBA' );
 
-
+$('#IDPRUEBA').val(rutdoctor);
 
 });
 });
