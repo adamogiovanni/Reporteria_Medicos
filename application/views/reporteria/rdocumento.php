@@ -36,7 +36,7 @@
   if($UsIdPerfil==2){?>
     <div class="container">
       
-      <input placeholder="Rut Doctor" type="text" id="RutSelectDoctor" name="RutSelectDoctor" class="form-control">
+      <input class="form-control" placeholder="Rut Doctor" type="text" id="RutSelectDoctor" name="RutSelectDoctor" >
 
       <button class="btn btn-primary btnfiltro" name="btnfiltro" id="btnfiltro"> Buscar Doctor BTEST </button>
       

@@ -6,7 +6,7 @@ $(document).ready(function(){
 $(document).ready(function(){
 $(document).on('click', '.btnfiltro', function(){
     
-var rutdoctor=$('#RutSelectDoctor').text();
+var rutdoctor=$('#RutSelectDoctor').val();
 
 alert(rutdoctor);
 
