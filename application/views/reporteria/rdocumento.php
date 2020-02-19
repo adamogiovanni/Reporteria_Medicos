@@ -313,10 +313,6 @@ $(document).ready(function()
 
     $('#example').dataTable( {
 
-    search: {
-    "search": "Fred"
-    }  
-      
     language: {
         processing: "<i class='fa fa-spinner fa-5x fa-spin fa-fw' aria-hidden='true'></i>",
         search: "<i class='fa fa-search' aria-hidden='true'></i>",
