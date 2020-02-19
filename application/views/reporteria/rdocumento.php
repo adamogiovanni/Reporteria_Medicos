@@ -32,9 +32,9 @@
   if($UsIdPerfil==2){?>
     <div class="container">
       
-      <input class="form-control" placeholder="Rut Doctor" type="text" id="RutSelectDoctor" name="RutSelectDoctor" 
-      onchange="formateaRutDoctor(this.value)"  onkeypress='return event.charCode >= 48 && event.charCode <= 57'
-      maxlength="10">
+      <!-- Si se quiere controlar que solo permita numero se puede usar la linea de abajo, pero no permitira la K tampoco.-->
+      <!-- onkeypress='return event.charCode >= 48 && event.charCode <= 57' -->
+      <input class="form-control" placeholder="Rut Doctor" type="text" id="RutSelectDoctor" name="RutSelectDoctor">
 
       <button class="btn btn-primary btnfiltro" name="btnfiltro" id="btnfiltro"> Buscar Doctor  </button>
       
