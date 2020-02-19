@@ -35,13 +35,9 @@
 <?php $UsIdPerfil = $this->session->userdata('UsIdPerfil');
   if($UsIdPerfil==2){?>
     <div class="container">
-    
-      <select id="xxx" name="xxx" class="mdb-select md-form" >
-        <option value="" disabled selected>Buscar por Rut</option>
-        <?php foreach ($consultaRutDoctor as $doc) { ?>                
-                <option value="<?=$doc['RutCliente']?>" id="RutSelectDoctor" name="RutSelectDoctor" ><?=$doc['RutCliente']?></option>';
-                <?php } ?>
-      </select>
+      
+      <input placeholder="Rut Doctor" type="text" id="RutSelectDoctor" name="RutSelectDoctor" class="form-control">
+
       <button class="btn btn-primary btnfiltro" name="btnfiltro" id="btnfiltro"> Buscar Doctor BTEST </button>
       
     </div>
