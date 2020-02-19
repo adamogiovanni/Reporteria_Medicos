@@ -27,7 +27,7 @@
 <?php $UsIdPerfil = $this->session->userdata('UsIdPerfil');
   if($UsIdPerfil==2){?>
     <div class="container">
-      <?=form_open(base_url()."rdocumento")?>
+      <?=form_open(base_url()."card")?>
       <select id="xxx" name="xxx" class="mdb-select md-form" >
         <option value="" disabled selected>Buscar por Rut</option>
         <?php foreach ($consultaRutDoctor as $doc) { ?>                
