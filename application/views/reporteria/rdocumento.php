@@ -1,4 +1,16 @@
 
+<script>
+$(document).ready(function(){
+$(document).on('click', '.btnfiltro', function(){
+    
+var rutdoctor=$('#RutSelectDoctor').text();
+
+alert(rutdoctor);
+
+});
+});
+</script>
+
 
 <div class="container">
     <div class="row">
@@ -27,14 +39,14 @@
 <?php $UsIdPerfil = $this->session->userdata('UsIdPerfil');
   if($UsIdPerfil==2){?>
     <div class="container">
-      <?=form_open(base_url()."card")?>
-      <select id="xxx" name="xxx" class="mdb-select md-form" >
+    <?=form_open(base_url()."rdocumento")?> 
+      <select id="RutSelectDoctor" name="RutSelectDoctor" class="mdb-select md-form" >
         <option value="" disabled selected>Buscar por Rut</option>
         <?php foreach ($consultaRutDoctor as $doc) { ?>                
                 <option value="<?=$doc['RutCliente']?>"  ><?=$doc['RutCliente']?></option>';
                 <?php } ?>
       </select>
-      <button class="btn btn-primary"> Buscar Doctor BTEST </button>
+      <button class="btn btn-primary btnfiltro" name="btnfiltro" id="btnfiltro"> Buscar Doctor BTEST </button>
       <?=form_close()?>
     </div>
     <?php 
