@@ -380,8 +380,8 @@ $(document).ready(function()
 
       // Update footer
       //$( api.column( 7 ).footer() ).html(('$'+pageTotal));//'$'+ pageTotal +'( $'+ total +' total)');
-      $('tr:eq(0) td:eq(2)', api.table().footer()).html(format(pageTotal, ''));
-      $('tr:eq(1) td:eq(2)', api.table().footer()).html(format(total, ''));
+      $('tr:eq(0) td:eq(2)', api.table().footer()).html(pageTotal);
+      $('tr:eq(1) td:eq(2)', api.table().footer()).html(total);
 
 
     },
