@@ -350,7 +350,6 @@ $(document).ready(function()
 }
 
 });
-=======
     //Calculo de Total
     //Inicio
     "footerCallback": function ( row, data, start, end, display ) 
@@ -388,7 +387,7 @@ $(document).ready(function()
     },
     //Final
 
-    //Nuevo calculo anterior.
+    
       dom: 'Bfrtip',
       lengthMenu: [
               [ 10, 25, 50, -1 ],
