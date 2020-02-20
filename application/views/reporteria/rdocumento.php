@@ -346,7 +346,19 @@ $(document).ready(function()
 
     //Calculo de Total
     //Inicio
-    //Aqui iba el calculo total anterior
+    "footerCallback": function ( row, data, start, end, display ) {
+        
+            total = this.api()
+                //.column(7)//numero de columna a sumar
+                .column(7, {page: 'current'})//para sumar solo la pagina actual
+                .data()
+                .reduce(function (a, b) {
+                    return parseInt(a) + parseInt(b);
+                }, 0 );
+
+            $(this.api().column(1).footer()).html(total);
+            
+        },
     //Final
 
     //Nuevo calculo anterior.
