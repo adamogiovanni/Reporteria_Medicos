@@ -538,7 +538,7 @@ $('#example').dataTable(
   } );
 
 }else{
-    alert('Both Date is Required and Choose what to show!');
+    alert('¡Se requiere la fecha para elegir qué mostrar!');
 }
 
 });
@@ -652,7 +652,7 @@ language: {
 } );
 
 }else{
-    alert('Both Date is Required and Choose what to show!');
+    alert('¡Se requiere la fecha para elegir qué mostrar!');
 }
 
 });
@@ -661,6 +661,7 @@ language: {
 
 
 $(document).ready(function() {
+  
 
 var min = 0;
 var max = 0;
@@ -890,7 +891,7 @@ language: {
 } );
 
 }else{
-    alert('Both Date is Required and Choose what to show!');
+    alert('¡Se requiere la fecha para elegir qué mostrar!');
 }
 
 });
