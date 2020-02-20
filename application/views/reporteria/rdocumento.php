@@ -363,7 +363,7 @@ $(document).ready(function()
           .column( 7 )
           .data()
           .reduce( function (a, b) {
-              return intVal(a) + intVal(b);
+              return parseFloat(a) + parseFloat(b);
           }, 0 );
 
       // Total over this page
@@ -371,12 +371,14 @@ $(document).ready(function()
           .column( 7, { page: 'current'} )
           .data()
           .reduce( function (a, b) {
-              return intVal(a) + intVal(b);
+              return parseFloat(a) + parseFloat(b);
           }, 0 );
 
       // Update footer
       $( api.column( 7 ).footer() ).html(
-          '$'+ total + //' ( $'+ total +' total)'
+          ('$'+number_format(pageTotal))
+
+          //'$'+ pageTotal +'( $'+ total +' total)'
       );
     },
     //Final
