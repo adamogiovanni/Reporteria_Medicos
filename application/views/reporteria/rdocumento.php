@@ -378,10 +378,11 @@ $(document).ready(function()
               return intVal(a) + intVal(b);
           }, 0 );
 
+      $totalformateado = number_format($total, 2, ',', ' ');
       // Update footer
       //$( api.column( 7 ).footer() ).html(('$'+pageTotal));//'$'+ pageTotal +'( $'+ total +' total)');
       $('tr:eq(0) th:eq(1)', api.table().footer()).html(pageTotal);
-      $('tr:eq(1) th:eq(1)', api.table().footer()).html(total);
+      $('tr:eq(1) th:eq(1)', api.table().footer()).html(totalformateado);
 
 
     },
