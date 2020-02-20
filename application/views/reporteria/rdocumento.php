@@ -344,39 +344,12 @@ $(document).ready(function()
       type: 'POST'
     },
 
-    "footerCallback": function ( row, data, start, end, display ) 
-    {
-      var api = this.api(), data;
+    //Calculo de Total
+    //Inicio
+    //Aqui iba el calculo total anterior
+    //Final
 
-      // Remove the formatting to get integer data for summation
-      var intVal = function ( i ) {
-          return typeof i === 'string' ?
-              i.replace(/[\$,]/g, '')*1 :
-              typeof i === 'number' ?
-                  i : 0;
-      };
-
-      // Total over all pages
-      total = api
-          .column( 7 )
-          .data()
-          .reduce( function (a, b) {
-              return intVal(a) + intVal(b);
-          }, 0 );
-
-      // Total over this page
-      pageTotal = api
-          .column( 7, { page: 'current'} )
-          .data()
-          .reduce( function (a, b) {
-              return intVal(a) + intVal(b);
-          }, 0 );
-
-      // Update footer
-      $( api.column( 7 ).footer() ).html(
-          '$'+ pageTotal +' ( $'+ total +' total)'
-      );
-    },
+    //Nuevo calculo anterior.
       dom: 'Bfrtip',
       lengthMenu: [
               [ 10, 25, 50, -1 ],
