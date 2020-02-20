@@ -376,7 +376,7 @@ $(document).ready(function()
 
       // Update footer
       $( api.column( 7 ).footer() ).html(
-          ('$'+number_format(pageTotal))
+          ('$'+pageTotal)
 
           //'$'+ pageTotal +'( $'+ total +' total)'
       );
