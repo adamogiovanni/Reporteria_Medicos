@@ -375,7 +375,7 @@ $(document).ready(function()
           }, 0 );
 
       // Update footer
-      $( api.column( 7 ).footer() ).html(('$'+pageTotal)//'$'+ pageTotal +'( $'+ total +' total)');
+      $( api.column( 7 ).footer() ).html(('$'+pageTotal);//'$'+ pageTotal +'( $'+ total +' total)');
       //$('tr:eq(0) td:eq(2)', api.table().footer()).html(format(total2, ''));
       //$('tr:eq(1) td:eq(2)', api.table().footer()).html(format(total2, ''));
 
