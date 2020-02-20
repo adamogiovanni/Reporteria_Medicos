@@ -367,7 +367,9 @@ $(document).ready(function()
           .column( 7 )
           .data()
           .reduce( function (a, b) {
-              return intVal(a) + intVal(b);
+              sumtotal =  intVal(a) + intVal(b);
+              formatNumber.new(sumtotal, "$")
+              return sumtotal
           }, 0 );
 
       // Total over this page
@@ -382,7 +384,7 @@ $(document).ready(function()
       // Update footer
       //$( api.column( 7 ).footer() ).html(('$'+pageTotal));//'$'+ pageTotal +'( $'+ total +' total)');
       $('tr:eq(0) th:eq(1)', api.table().footer()).html(pageTotal);
-      $('tr:eq(1) th:eq(1)', api.table().footer()).html(formatNumber.new(total, "$"));
+      $('tr:eq(1) th:eq(1)', api.table().footer()).html(total);
 
 
     },
