@@ -344,50 +344,12 @@ $(document).ready(function()
       type: 'POST'
     },
 
-<<<<<<< HEAD
-}else{
-    alert('¡Se requiere la fecha para elegir qué mostrar!');
-}
-
-});
     //Calculo de Total
     //Inicio
-    "footerCallback": function ( row, data, start, end, display ) 
-    {
-      var api = this.api(), data;
-
-      // Remove the formatting to get integer data for summation
-      var intVal = function ( i ) {
-          return typeof i === 'string' ?
-              i.replace(/[\$,]/g, '')*1 :
-              typeof i === 'number' ?
-                  i : 0;
-      };
-
-      // Total over all pages
-      total = api
-          .column( 7 )
-          .data()
-          .reduce( function (a, b) {
-              return intVal(a) + intVal(b);
-          }, 0 );
-
-      // Total over this page
-      pageTotal = api
-          .column( 7, { page: 'current'} )
-          .data()
-          .reduce( function (a, b) {
-              return intVal(a) + intVal(b);
-          }, 0 );
-
-      // Update footer
-      $( api.column( 7 ).footer() ).html(
-          '$'+ pageTotal +' ( $'+ total +' total)'
-      );
-    },
+    //Aqui iba el calculo total anterior
     //Final
 
-    
+    //Nuevo calculo anterior.
       dom: 'Bfrtip',
       lengthMenu: [
               [ 10, 25, 50, -1 ],
@@ -439,7 +401,6 @@ $(document).ready(function()
                   messageBottom: null
               }
           ],
->>>>>>> 8263b69681a18c6a955cf7d5e8c46ce6f0fa90c3
 
     });
   });
@@ -552,7 +513,7 @@ language: {
 } );
 
 }else{
-    alert('¡Se requiere la fecha para elegir qué mostrar!');
+    alert('Both Date is Required and Choose what to show!');
 }
 
 });
@@ -561,7 +522,6 @@ language: {
 
 
 $(document).ready(function() {
-  
 
 var min = 0;
 var max = 0;
@@ -791,7 +751,7 @@ language: {
 } );
 
 }else{
-    alert('¡Se requiere la fecha para elegir qué mostrar!');
+    alert('Both Date is Required and Choose what to show!');
 }
 
 });
