@@ -118,7 +118,11 @@
             </tfooter>
             <tfoot>
               <tr>
-                <th colspan="7" style="text-align:right">Total:</th>
+                <th colspan="7" style="text-align:right">Total Pagina:</th>
+                <th></th>
+              </tr>
+              <tr>
+                <th colspan="7" style="text-align:right">Total General:</th>
                 <th></th>
               </tr>
             </tfoot>
@@ -375,9 +379,9 @@ $(document).ready(function()
           }, 0 );
 
       // Update footer
-      $( api.column( 7 ).footer() ).html(('$'+pageTotal));//'$'+ pageTotal +'( $'+ total +' total)');
-      //$('tr:eq(0) td:eq(2)', api.table().footer()).html(format(total2, ''));
-      //$('tr:eq(1) td:eq(2)', api.table().footer()).html(format(total2, ''));
+      //$( api.column( 7 ).footer() ).html(('$'+pageTotal));//'$'+ pageTotal +'( $'+ total +' total)');
+      $('tr:eq(0) td:eq(2)', api.table().footer()).html(format(pageTotal, ''));
+      $('tr:eq(1) td:eq(2)', api.table().footer()).html(format(total, ''));
 
 
     },
