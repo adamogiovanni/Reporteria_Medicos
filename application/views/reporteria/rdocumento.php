@@ -356,7 +356,7 @@ $(document).ready(function()
                     return parseInt(a) + parseInt(b);
                 }, 0 );
 
-            $(this.api().column(1).footer()).html(total);
+            $(this.api().column(7).footer()).html(total);
             
         },
     //Final
