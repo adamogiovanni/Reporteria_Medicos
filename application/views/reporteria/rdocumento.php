@@ -318,7 +318,9 @@ $(document).ready(function()
                     "max" : max};
 
     $('#example').dataTable( {
-
+    columns: [
+            { data: "Valor Neto", render: $.fn.dataTable.render.number( '\'', ',', 0, '$' ) }
+    ],
     language: {
         processing: "<i class='fa fa-spinner fa-5x fa-spin fa-fw' aria-hidden='true'></i>",
         search: "<i class='fa fa-search' aria-hidden='true'></i>",
@@ -364,7 +366,7 @@ $(document).ready(function()
 
       // Total over all pages
       total = api
-          .column( 7 )
+          .column(7)
           .data()
           .reduce( function (a, b) {
              return intVal(a) + intVal(b);
@@ -372,7 +374,7 @@ $(document).ready(function()
 
       // Total over this page
       pageTotal = api
-          .column( 7, { page: 'current'} )
+          .column(7, { page: 'current'} )
           .data()
           .reduce( function (a, b) {
               return intVal(a) + intVal(b);
