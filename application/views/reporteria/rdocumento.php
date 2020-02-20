@@ -404,7 +404,7 @@ $(document).ready(function()
                     $(win.document.body)
                         .css( 'font-size', '10pt' )
                         .prepend(
-                            '<img src="http://datatables.net/media/images/logo-fade.png" style="position:absolute; top:0; left:0;" />'
+                            '<img src="<?php echo base_url(); ?>/imagenes/ncmh.png" style="position:absolute; top:0; left:0;" />'
                         );
  
                     $(win.document.body).find( 'table' )
@@ -523,7 +523,7 @@ $('#example').dataTable(
                     $(win.document.body)
                         .css( 'font-size', '10pt' )
                         .prepend(
-                            '<img src="http://datatables.net/media/images/logo-fade.png" style="position:absolute; top:0; left:0;" />'
+                            '<img src="<?php echo base_url(); ?>/imagenes/ncmh.png" style="position:absolute; top:0; left:0;" />'
                         );
  
                     $(win.document.body).find( 'table' )
@@ -633,7 +633,7 @@ language: {
                     $(win.document.body)
                         .css( 'font-size', '10pt' )
                         .prepend(
-                            '<img src="http://datatables.net/media/images/logo-fade.png" style="position:absolute; top:0; left:0;" />'
+                            '<img src="<?php echo base_url(); ?>/imagenes/ncmh.png" style="position:absolute; top:0; left:0;" />'
                         );
  
                     $(win.document.body).find( 'table' )
@@ -770,7 +770,7 @@ language: {
                     $(win.document.body)
                         .css( 'font-size', '10pt' )
                         .prepend(
-                            '<img src="http://datatables.net/media/images/logo-fade.png" style="position:absolute; top:0; left:0;" />'
+                            '<img src="<?php echo base_url(); ?>/imagenes/ncmh.png" style="position:absolute; top:0; left:0;" />'
                         );
  
                     $(win.document.body).find( 'table' )
