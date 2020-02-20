@@ -318,9 +318,6 @@ $(document).ready(function()
                     "max" : max};
 
     $('#example').dataTable( {
-    columns: [
-            { data: "Valor Neto", render: $.fn.dataTable.render.number( '\'', ',', 0, '$' ) }
-    ],
     language: {
         processing: "<i class='fa fa-spinner fa-5x fa-spin fa-fw' aria-hidden='true'></i>",
         search: "<i class='fa fa-search' aria-hidden='true'></i>",
@@ -349,6 +346,7 @@ $(document).ready(function()
       url:'rdocumento/consultaprovision',
       type: 'POST'
     },
+    
 
     //Calculo de Total
     //Inicio
