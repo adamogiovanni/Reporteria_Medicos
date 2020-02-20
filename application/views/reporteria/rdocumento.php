@@ -118,11 +118,7 @@
             </tfooter>
             <tfoot>
               <tr>
-                <th colspan="7" style="text-align:right">Total Pagina:</th>
-                <th></th>
-              </tr>
-              <tr>
-                <th colspan="7" style="text-align:right">Total General:</th>
+                <th colspan="7" style="text-align:right">Total:</th>
                 <th></th>
               </tr>
             </tfoot>
