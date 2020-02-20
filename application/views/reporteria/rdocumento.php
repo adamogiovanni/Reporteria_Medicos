@@ -344,6 +344,13 @@ $(document).ready(function()
       type: 'POST'
     },
 
+<<<<<<< HEAD
+}else{
+    alert('¡Se requiere la fecha para elegir qué mostrar!');
+}
+
+});
+=======
     //Calculo de Total
     //Inicio
     "footerCallback": function ( row, data, start, end, display ) 
@@ -433,6 +440,7 @@ $(document).ready(function()
                   messageBottom: null
               }
           ],
+>>>>>>> 8263b69681a18c6a955cf7d5e8c46ce6f0fa90c3
 
     });
   });
@@ -545,7 +553,7 @@ language: {
 } );
 
 }else{
-    alert('Both Date is Required and Choose what to show!');
+    alert('¡Se requiere la fecha para elegir qué mostrar!');
 }
 
 });
@@ -554,6 +562,7 @@ language: {
 
 
 $(document).ready(function() {
+  
 
 var min = 0;
 var max = 0;
@@ -783,7 +792,7 @@ language: {
 } );
 
 }else{
-    alert('Both Date is Required and Choose what to show!');
+    alert('¡Se requiere la fecha para elegir qué mostrar!');
 }
 
 });
