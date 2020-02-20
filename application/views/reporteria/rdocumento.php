@@ -74,10 +74,10 @@
             </div>
         </div>
         <div class="col">
-                 <div class="md-form">
-                     <input placeholder="Seleccione Fecha" type="text" id="max" name="max" class="form-control datepicker">
-                      <label for="date-picker-example">Final</label>
-                 </div>
+        <div class="md-form">
+          <input placeholder="Seleccione Fecha" type="text" id="max" name="max" class="form-control datepicker">
+          <label for="date-picker-example">Final</label>
+        </div>
         </div>   
         <div class="form-group">
                           <div class="input-group date">
@@ -431,6 +431,96 @@ $(document).ready(function()
 
     });
   });
+
+
+  $('#search').click(function(){
+
+var min = $('#min').val();
+var max = $('#max').val();
+
+ var parametros = {
+                "min" : min,
+                "max" : max};
+
+if(min != '' && max ){
+   var table = $('#example').DataTable();
+    table.destroy();
+$('#example').dataTable( {
+language: {
+      processing: "<i class='fa fa-spinner fa-5x fa-spin fa-fw' aria-hidden='true'></i>",
+      search: "<i class='fa fa-search' aria-hidden='true'></i>",
+      lengthMenu:     "Mostrando _MENU_ casos",
+      info:           "Mostrando del _START_ al _END_ de _TOTAL_ casos",
+      infoEmpty:      "Mostrando 0 al 0 de 0 coincidencias",
+      infoFiltered: "(filtrado de un total de _MAX_ elementos)",
+      infoPostFix: "",
+      loadingRecords: "<i class='fa fa-spinner fa-5x fa-spin fa-fw' aria-hidden='true'></i>",
+      zeroRecords: "No se encontraron coincidencias",
+      emptyTable: "No hay datos para mostrar",
+      paginate: {
+        first: "<i class='fa fa-fast-backward fa-lg' aria-hidden='true'></i>",
+        previous: "<i class='fa fa-backward fa-lg' aria-hidden='true'></i>",
+        next: "<i class='fa fa-forward fa-lg' aria-hidden='true'></i>",
+        last: "<i class='fa fa-fast-forward fa-lg' aria-hidden='true'></i>"
+
+      }
+      //,
+      //aria: {
+      //    sortAscending: ": activate to sort column ascending",
+      //    sortDescending: ": activate to sort column descending"
+      //}
+    }
+  ,"ajax": {
+    data:parametros,
+    url:'rdocumento/consultarango',
+    type: 'POST'
+  },
+  dom: 'Bfrtip',
+  buttons: [
+            'copy', {
+                extend: 'excel',
+                text: 'Excel',
+                title: 'NCMH',
+                filename: 'NCMH',
+            }, {
+                extend: 'pdf',
+                text: 'PDF',
+                orientation: 'landscape',
+                title: 'NCMH',
+                filename: 'NCMH',
+            }, {
+                extend: 'print',
+                text: 'Imprimir',
+                title: 'NCMH',
+                exportOptions: {
+                    modifier: {
+                        page: 'current'
+                    }
+                },
+                customize: function ( win ) {
+                    $(win.document.body)
+                        .css( 'font-size', '10pt' )
+                        .prepend(
+                            '<img src="http://datatables.net/media/images/logo-fade.png" style="position:absolute; top:0; left:0;" />'
+                        );
+ 
+                    $(win.document.body).find( 'table' )
+                        .addClass( 'compact' )
+                        .css( 'font-size', 'inherit' );
+                },
+            }
+        ],
+               "dom": '<"dt-buttons"Bf><"clear">lirtp',
+            "paging": true,
+            "autoWidth": true
+} );
+
+}else{
+    alert('Both Date is Required and Choose what to show!');
+}
+
+});
+
 
 
 
