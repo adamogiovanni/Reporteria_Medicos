@@ -228,7 +228,7 @@
         $pru['Observacion'],
         //Backup Formato moneda a valor de la tabla
         //'$'.number_format($pru['Valor'], 0, ",", "."));
-        $pru['Valor']
+        $pru['Valor']);
       }
     }
     else
@@ -246,7 +246,7 @@
         $pru['Observacion'],
         //Backup Formato moneda a valor de la tabla
         //'$'.number_format($pru['Valor'], 0, ",", "."));
-        $pru['Valor']
+        $pru['Valor']);
       }
     }  
     $result = array(
