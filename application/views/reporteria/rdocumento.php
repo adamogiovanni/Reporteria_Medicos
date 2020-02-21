@@ -526,9 +526,7 @@ $(document).ready(function()
       url:'rdocumento/consultaprovision',
       type: 'POST'
     },
-    columns: [
-            { data: "Valor Neto", render: $.fn.dataTable.render.number( '\.', ',', 0, '$' ) }
-    ],
+    
 
     //Calculo de Total
     //Inicio
@@ -577,6 +575,9 @@ $(document).ready(function()
               [ 10, 25, 50, -1 ],
               [ '10 Datos', '25 Datos', '50 Datos', 'Todos' ]
           ],
+      columns: [
+            { data: "Valor Neto", render: $.fn.dataTable.render.number( '\.', ',', 0, '$' ) }
+      ],    
       buttons: [
               'pageLength', 
 
