@@ -267,7 +267,7 @@
                       <th>Fecha Comprobante</th>     
                       <th>Fecha Proceso</th>
                        <th>Rut Profesional</th>
-                       <th>Valor Neto</th>
+                       <th>Monto_Pagado</th>
                     </tr>
                   </thead>
 
@@ -284,9 +284,19 @@
                       <th>Fecha Comprobante</th>     
                       <th>Fecha Proceso</th>
                        <th>Rut Profesional</th>
-                       <th>Valor Neto</th>
+                       <th>Monto_Pagado</th>
                     </tr>
                   </tfooter>
+                  <tfoot>
+                    <tr>
+                      <th colspan="6" style="text-align:right">Total Pagina:</th>
+                      <th></th>
+                    </tr>
+                    <tr>
+                      <th colspan="6" style="text-align:right">Total General:</th>
+                      <th></th>
+                    </tr>
+                  </tfoot>
           </table>
     </div>
     </div>
@@ -1028,7 +1038,7 @@ language: {
 
       // Total over all pages
       total = api
-          .column(7)
+          .column(6)
           .data()
           .reduce( function (a, b) {
              return intVal(a) + intVal(b);
@@ -1036,7 +1046,7 @@ language: {
 
       // Total over this page
       pageTotal = api
-          .column(7, { page: 'current'} )
+          .column(6, { page: 'current'} )
           .data()
           .reduce( function (a, b) {
               return intVal(a) + intVal(b);
@@ -1168,7 +1178,7 @@ language: {
 
       // Total over all pages
       total = api
-          .column(7)
+          .column(6)
           .data()
           .reduce( function (a, b) {
              return intVal(a) + intVal(b);
@@ -1176,7 +1186,7 @@ language: {
 
       // Total over this page
       pageTotal = api
-          .column(7, { page: 'current'} )
+          .column(6, { page: 'current'} )
           .data()
           .reduce( function (a, b) {
               return intVal(a) + intVal(b);
