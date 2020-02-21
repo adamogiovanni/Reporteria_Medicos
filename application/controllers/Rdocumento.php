@@ -227,7 +227,7 @@
         $pru['Rut_Doctor'],
         $pru['Observacion'],
         //Backup Formato moneda a valor de la tabla
-        '$'.number_format($pru['Valor'], 2, ".", ","));
+        '$'.number_format($pru['Valor'], 0, ".", ","));
         //$pru['Valor']);
       }
     }
@@ -245,7 +245,7 @@
         $pru['Rut_Doctor'],
         $pru['Observacion'],
         //Backup Formato moneda a valor de la tabla
-        '$'.number_format($pru['Valor'], 2, ".", ","));      
+        '$'.number_format($pru['Valor'], 0, ".", ","));      
       }
     }  
     $result = array(
