@@ -125,7 +125,8 @@
           $pru['Boleta'],                        
           $pru['NombreEstado'],
           $pru['NroComprobante'],
-          $pru['FechaComprobante'],                           
+          $pru['FechaComprobante'],
+          $pru['FechaProPAgo'],                           
           $pru['Rut_Doctor'],
           $pru['Observacion'], 
           $pru['ValorRetencion'],
@@ -138,17 +139,18 @@
         foreach($prueba as $pru)
         {
           $data[] = array(
-          $pru['Empresa'],
-          //$pru['ID'],
-          $pru['TipoDocumento'], 
-          $pru['Boleta'],
-          $pru['NombreEstado'],
-          $pru['NroComprobante'],
-          $pru['FechaComprobante'],
-          $pru['Rut_Doctor'],
-          $pru['Observacion'],                  
-          $pru['ValorRetencion'],
-          '$'.number_format($pru['Valor_Neto'], 0, ",", "."));
+            $pru['Empresa'],
+            // $pru['ID'],
+            $pru['TipoDocumento'],
+            $pru['Boleta'],                        
+            $pru['NombreEstado'],
+            $pru['NroComprobante'],
+            $pru['FechaComprobante'],
+            $pru['FechaProPAgo'],                           
+            $pru['Rut_Doctor'],
+            $pru['Observacion'], 
+            $pru['ValorRetencion'],
+            '$'.number_format($pru['Valor_Neto'], 0, ",", "."));
         }
       }
       $result = array(

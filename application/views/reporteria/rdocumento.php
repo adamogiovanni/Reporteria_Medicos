@@ -165,10 +165,12 @@
                     <tr>
                       <th>Empresa</th>
                        <!-- <th>ID</th> -->
-                      <th>Tipo Documento</th>                                          
+                      <th>Tipo Documento</th>
+                      <th>Nro Boleta/Factura</th>                                            
                       <th>Nombre Estado</th>
                       <th>Nro. Comprobante</th>         
-                      <th>Fecha Comprobante</th> 
+                      <th>Fecha Comprobante</th>
+                      <th>Fecha Problable Pago</th>  
                       <th>Rut Profesional</th>
                       <th>Observación</th> 
                       <th>Valor Retencion</th>
@@ -180,14 +182,16 @@
                     <tr>
                     <th>Empresa</th>
                        <!-- <th>ID</th> -->
-                      <th>Tipo Documento</th>                                          
+                      <th>Tipo Documento</th>
+                      <th>Nro Boleta/Factura</th>                                            
                       <th>Nombre Estado</th>
                       <th>Nro. Comprobante</th>         
-                      <th>Fecha Comprobante</th> 
+                      <th>Fecha Comprobante</th>
+                      <th>Fecha Problable Pago</th>  
                       <th>Rut Profesional</th>
-                      <th>Observación</th>
-                      <th>Valor Retencion</th>                        
-                      <th>Valor Neto</th>
+                      <th>Observación</th> 
+                      <th>Valor Retencion</th>
+                      <th>Valor Neto</th>    
                                  
                     </tr>
                   </tfooter>
