@@ -366,10 +366,6 @@ $('#example').dataTable( {
       url:'rdocumento/consultaprovision',
       type: 'POST'
     },
-    "language": {
-            "decimal": ",",
-            "thousands": "."
-        },
 
     //Calculo de Total
     //Inicio
