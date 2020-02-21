@@ -402,9 +402,9 @@ $('#example').dataTable( {
       // Update footer
       //$( api.column( 7 ).footer() ).html(('$'+pageTotal));//'$'+ pageTotal +'( $'+ total +' total)');
 
-      var numFormat = $.fn.dataTable.render.number( '\.', ',', 0, $).display;      
-      $('tr:eq(0) th:eq(1)', api.table().footer()).html(numFormat(pageTotal));
-      $('tr:eq(1) th:eq(1)', api.table().footer()).html(numFormat(total));
+      var numFormat = $.fn.dataTable.render.number( '\.', ',', 0,).display;      
+      $('tr:eq(0) th:eq(1)', api.table().footer()).html('$'+ numFormat(pageTotal));
+      $('tr:eq(1) th:eq(1)', api.table().footer()).html('$'+ numFormat(total));
 
 
     },
