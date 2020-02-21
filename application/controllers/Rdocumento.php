@@ -120,15 +120,16 @@
         {
           $data[] = array(
           $pru['Empresa'],
-          $pru['ID'],
+          // $pru['ID'],
           $pru['TipoDocumento'],
-          $pru['Valor_Neto'],
-          $pru['ValorRetencion'],                
+          $pru['Boleta'],                        
           $pru['NombreEstado'],
           $pru['NroComprobante'],
-          $pru['FechaComprobante'],
-          $pru['Observacion'],                  
-          $pru['Rut_Doctor']);
+          $pru['FechaComprobante'],                           
+          $pru['Rut_Doctor'],
+          $pru['Observacion'], 
+          $pru['ValorRetencion'],
+          '$'.number_format($pru['Valor_Neto'], 0, ",", "."));
         }
       }
       else
@@ -138,15 +139,16 @@
         {
           $data[] = array(
           $pru['Empresa'],
-          $pru['ID'],
-          $pru['TipoDocumento'],
-          $pru['Valor_Neto'],
-          $pru['ValorRetencion'],                
+          //$pru['ID'],
+          $pru['TipoDocumento'], 
+          $pru['Boleta'],
           $pru['NombreEstado'],
           $pru['NroComprobante'],
           $pru['FechaComprobante'],
+          $pru['Rut_Doctor'],
           $pru['Observacion'],                  
-          $pru['Rut_Doctor']);
+          $pru['ValorRetencion'],
+          '$'.number_format($pru['Valor_Neto'], 0, ",", "."));
         }
       }
       $result = array(

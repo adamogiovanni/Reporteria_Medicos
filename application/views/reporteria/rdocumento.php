@@ -253,32 +253,34 @@
 
                   <thead>
                     <tr>
-                      <th>ID</th>
+                      <!-- <th>ID</th> -->
                       <th>Empresa</th>
-                      <th>Correlativo</th>
-                      <th>Fecha_Proceso</th>                     
+                      <!-- <th>Correlativo</th> -->
+                                        
                       <th>Nro. Documento</th>
-                      <th>Valor Neto</th>
+                    
                       <th>Nro. Comprobante</th>        
                       <th>Fecha Comprobante</th>     
                       <th>Fecha Proceso</th>
-                       <th>Rut Funcionario</th>
+                       <th>Rut Profesional</th>
+                       <th>Valor Neto</th>
                     </tr>
                   </thead>
 
                   <tfooter>
                     <tr>
 
-                      <th>ID</th>
+                      <!-- <th>ID</th> -->
                       <th>Empresa</th>
-                      <th>Correlativo</th>
-                      <th>Fecha_Proceso</th>                     
+                      <!-- <th>Correlativo</th> -->
+                                          
                       <th>Nro. Documento</th>
-                      <th>Valor Neto</th>
+                      
                       <th>Nro. Comprobante</th>        
                       <th>Fecha Comprobante</th>     
                       <th>Fecha Proceso</th>
-                       <th>Rut Funcionario</th>
+                       <th>Rut Profesional</th>
+                       <th>Valor Neto</th>
                     </tr>
                   </tfooter>
           </table>
