@@ -130,7 +130,7 @@
           $pru['Rut_Doctor'],
           $pru['Observacion'], 
           $pru['ValorRetencion'],
-          '$'.number_format($pru['Valor_Neto'], 0, ",", "."));
+          '$'.number_format($pru['Valor_Neto'], 0, ".", ","));
         }
       }
       else
@@ -150,7 +150,7 @@
             $pru['Rut_Doctor'],
             $pru['Observacion'], 
             $pru['ValorRetencion'],
-            '$'.number_format($pru['Valor_Neto'], 0, ",", "."));
+            '$'.number_format($pru['Valor_Neto'], 0, ".", ","));
         }
       }
       $result = array(
@@ -180,7 +180,7 @@
           $pru['FechaComprobante'],
           $pru['Fecha_de_Proceso_Pago'],
           $pru['Rut'],
-          '$'.number_format($pru['Monto_Pagado'], 0, ",", "."));
+          '$'.number_format($pru['Monto_Pagado'], 0, ".", ","));
         }
       }
       else
@@ -199,7 +199,7 @@
             $pru['FechaComprobante'],
             $pru['Fecha_de_Proceso_Pago'],
             $pru['Rut'],
-            '$'.number_format($pru['Monto_Pagado'], 0, ",", "."));
+            '$'.number_format($pru['Monto_Pagado'], 0, ".", ","));
         }
       }
       $result = array(
@@ -245,7 +245,7 @@
         $pru['Rut_Doctor'],
         $pru['Observacion'],
         //Backup Formato moneda a valor de la tabla
-        '$'.number_format($pru['Valor'], 0, ".", ","));      
+        '$'.number_format($pru['Valor'], 0, ".", ","));   
       }
     }  
     $result = array(

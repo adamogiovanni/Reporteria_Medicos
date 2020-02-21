@@ -398,12 +398,11 @@ $('#example').dataTable( {
 
 
       // Update footer
-      $( api.column( 7 ).footer() ).html(('$'+pageTotal));//'$'+ pageTotal +'( $'+ total +' total)');
+      //$( api.column( 7 ).footer() ).html(('$'+pageTotal));//'$'+ pageTotal +'( $'+ total +' total)');
 
-      //var numFormat = $.fn.dataTable.render.number( '\.', ',', 0,).display;      
-      //$('tr:eq(0) th:eq(1)', api.table().footer()).html('$'+ numFormat(pageTotal));
-      //$('tr:eq(1) th:eq(1)', api.table().footer()).html('$'+ numFormat(total));
-
+      var numFormat = $.fn.dataTable.render.number( '\,', '.', 0,).display;      
+      $('tr:eq(0) th:eq(1)', api.table().footer()).html('$'+ numFormat(pageTotal));
+      $('tr:eq(1) th:eq(1)', api.table().footer()).html('$'+ numFormat(total));
 
     },
     //Final
@@ -560,8 +559,7 @@ $(document).ready(function()
               return intVal(a) + intVal(b);
           }, 0 );
 
-
-       // Update footer
+      // Update footer
       //$( api.column( 7 ).footer() ).html(('$'+pageTotal));//'$'+ pageTotal +'( $'+ total +' total)');
 
       var numFormat = $.fn.dataTable.render.number( '\,', '.', 0,).display;      
@@ -738,12 +736,12 @@ language: {
 
 
       // Update footer
+      // Update footer
       //$( api.column( 7 ).footer() ).html(('$'+pageTotal));//'$'+ pageTotal +'( $'+ total +' total)');
 
-      //var numFormat = $.fn.dataTable.render.number( '\.', ',', 2, ' $ ' ).display;
-      
-      $('tr:eq(0) th:eq(1)', api.table().footer()).html(pageTotal);
-      $('tr:eq(1) th:eq(1)', api.table().footer()).html(total);
+      var numFormat = $.fn.dataTable.render.number( '\,', '.', 0,).display;      
+      $('tr:eq(0) th:eq(1)', api.table().footer()).html('$'+ numFormat(pageTotal));
+      $('tr:eq(1) th:eq(1)', api.table().footer()).html('$'+ numFormat(total));
 
 
     },
@@ -881,12 +879,12 @@ language: {
 
 
       // Update footer
+      // Update footer
       //$( api.column( 7 ).footer() ).html(('$'+pageTotal));//'$'+ pageTotal +'( $'+ total +' total)');
 
-      //var numFormat = $.fn.dataTable.render.number( '\.', ',', 2, ' $ ' ).display;
-      
-      $('tr:eq(0) th:eq(1)', api.table().footer()).html(pageTotal);
-      $('tr:eq(1) th:eq(1)', api.table().footer()).html(total);
+      var numFormat = $.fn.dataTable.render.number( '\,', '.', 0,).display;      
+      $('tr:eq(0) th:eq(1)', api.table().footer()).html('$'+ numFormat(pageTotal));
+      $('tr:eq(1) th:eq(1)', api.table().footer()).html('$'+ numFormat(total));
 
 
     },
@@ -1052,12 +1050,12 @@ language: {
 
 
       // Update footer
+      // Update footer
       //$( api.column( 7 ).footer() ).html(('$'+pageTotal));//'$'+ pageTotal +'( $'+ total +' total)');
 
-      //var numFormat = $.fn.dataTable.render.number( '\.', ',', 2, ' $ ' ).display;
-      
-      $('tr:eq(0) th:eq(1)', api.table().footer()).html(pageTotal);
-      $('tr:eq(1) th:eq(1)', api.table().footer()).html(total);
+      var numFormat = $.fn.dataTable.render.number( '\,', '.', 0,).display;      
+      $('tr:eq(0) th:eq(1)', api.table().footer()).html('$'+ numFormat(pageTotal));
+      $('tr:eq(1) th:eq(1)', api.table().footer()).html('$'+ numFormat(total));
 
 
     },
@@ -1192,12 +1190,12 @@ language: {
 
 
       // Update footer
+      // Update footer
       //$( api.column( 7 ).footer() ).html(('$'+pageTotal));//'$'+ pageTotal +'( $'+ total +' total)');
 
-      //var numFormat = $.fn.dataTable.render.number( '\.', ',', 2, ' $ ' ).display;
-      
-      $('tr:eq(0) th:eq(1)', api.table().footer()).html(pageTotal);
-      $('tr:eq(1) th:eq(1)', api.table().footer()).html(total);
+      var numFormat = $.fn.dataTable.render.number( '\,', '.', 0,).display;      
+      $('tr:eq(0) th:eq(1)', api.table().footer()).html('$'+ numFormat(pageTotal));
+      $('tr:eq(1) th:eq(1)', api.table().footer()).html('$'+ numFormat(total));
 
 
     },
