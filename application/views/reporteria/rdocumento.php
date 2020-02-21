@@ -364,7 +364,7 @@ $('#example').dataTable( {
     ,"ajax": {
       data:parametros,
       url:'rdocumento/consultaprovision',
-      type: 'GET'
+      type: 'POST'
     },
     
 
@@ -402,10 +402,10 @@ $('#example').dataTable( {
       // Update footer
       //$( api.column( 7 ).footer() ).html(('$'+pageTotal));//'$'+ pageTotal +'( $'+ total +' total)');
 
-      var numFormat = $.fn.dataTable.render.number( '\.', ',', 2,).display;
+      //var numFormat = $.fn.dataTable.render.number( '\.', ',', 2, ' $ ' ).display;
       
       $('tr:eq(0) th:eq(1)', api.table().footer()).html(pageTotal);
-      $('tr:eq(1) th:eq(1)', api.table().footer()).html(numFormat(total);
+      $('tr:eq(1) th:eq(1)', api.table().footer()).html(total);
 
 
     },
@@ -1031,8 +1031,8 @@ language: {
       // Remove the formatting to get integer data for summation
       var intVal = function ( i ) {
           return typeof i === 'string' ?
-              //i.replace(/[\$,]/g, '')*1 :
-              i.replace( /[$,]/g, '' ) :
+              i.replace(/[\$,]/g, '')*1 :
+              
               typeof i === 'number' ?
                   i : 0;
       };
@@ -1072,13 +1072,6 @@ language: {
                 text: 'Excel',
                 title: 'NCMH ***PAGO***',
                 filename: 'NCMH_PAGO',
-                format: {
-                body: function ( data, row, column, node ) {
-                    // Strip $ from salary column to make it numeric
-                    return column === 5 ?
-                        data.replace( /[$,]/g, '' ) :
-                        data;
-                } }
             }, {
                 extend: 'pdfHtml5',
                 text: 'PDF',
@@ -1179,8 +1172,7 @@ language: {
       // Remove the formatting to get integer data for summation
       var intVal = function ( i ) {
           return typeof i === 'string' ?
-             // i.replace(/[\$,]/g, '')*1 :
-              i.replace( /[$,]/g, '' ) :
+              i.replace(/[\$,]/g, '')*1 :
               typeof i === 'number' ?
                   i : 0;
       };
@@ -1225,11 +1217,9 @@ language: {
             extend: 'copy',
             text: 'Copiar',
             exportOptions: {
-                
                 modifier: {
                     page: 'current'
                 }
-
             }
         },
             { extend: 'colvis', text: 'Columnas' }, 
@@ -1238,13 +1228,6 @@ language: {
                 text: 'Excel',
                 title: 'NCMH ***PAGO***',
                 filename: 'NCMH_PAGO',
-                format: {
-                body: function ( data, row, column, node ) {
-                    // Strip $ from salary column to make it numeric
-                    return column === 5 ?
-                        data.replace( /[$,]/g, '' ) :
-                        data;
-                } }
             },{
                 extend: 'pdfHtml5',
                 text: 'PDF',
