@@ -365,7 +365,7 @@ $('#example').dataTable( {
       data:parametros,
       url:'rdocumento/consultaprovision',
       type: 'POST'
-    },
+    }
     
 
     //Calculo de Total
