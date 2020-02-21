@@ -1031,7 +1031,8 @@ language: {
       // Remove the formatting to get integer data for summation
       var intVal = function ( i ) {
           return typeof i === 'string' ?
-              i.replace(/[\$,]/g, '')*1 :
+              //i.replace(/[\$,]/g, '')*1 :
+              i.replace( /[$,]/g, '' ) :
               typeof i === 'number' ?
                   i : 0;
       };
@@ -1071,6 +1072,13 @@ language: {
                 text: 'Excel',
                 title: 'NCMH ***PAGO***',
                 filename: 'NCMH_PAGO',
+                format: {
+                body: function ( data, row, column, node ) {
+                    // Strip $ from salary column to make it numeric
+                    return column === 5 ?
+                        data.replace( /[$,]/g, '' ) :
+                        data;
+                } }
             }, {
                 extend: 'pdfHtml5',
                 text: 'PDF',
@@ -1171,7 +1179,8 @@ language: {
       // Remove the formatting to get integer data for summation
       var intVal = function ( i ) {
           return typeof i === 'string' ?
-              i.replace(/[\$,]/g, '')*1 :
+             // i.replace(/[\$,]/g, '')*1 :
+              i.replace( /[$,]/g, '' ) :
               typeof i === 'number' ?
                   i : 0;
       };
@@ -1216,9 +1225,11 @@ language: {
             extend: 'copy',
             text: 'Copiar',
             exportOptions: {
+                
                 modifier: {
                     page: 'current'
                 }
+
             }
         },
             { extend: 'colvis', text: 'Columnas' }, 
@@ -1227,6 +1238,13 @@ language: {
                 text: 'Excel',
                 title: 'NCMH ***PAGO***',
                 filename: 'NCMH_PAGO',
+                format: {
+                body: function ( data, row, column, node ) {
+                    // Strip $ from salary column to make it numeric
+                    return column === 5 ?
+                        data.replace( /[$,]/g, '' ) :
+                        data;
+                } }
             },{
                 extend: 'pdfHtml5',
                 text: 'PDF',
