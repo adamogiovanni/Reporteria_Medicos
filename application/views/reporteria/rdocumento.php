@@ -293,10 +293,10 @@
  <script type="text/javascript">
 
 $('#search').click(function(){
-var currentDate = new Date()
-var day = currentDate.getDate()
-var month = currentDate.getMonth() + 1
-var year = currentDate.getFullYear()
+var currentDate = new Date();
+var day = currentDate.getDate();
+var month = currentDate.getMonth() + 1;
+var year = currentDate.getFullYear();
 
 var d = day + "-" + month + "-" + year;
 
@@ -460,6 +460,12 @@ $('#example').dataTable( {
 $(document).ready(function() 
   {
 
+    var currentDate = new Date();
+    var day = currentDate.getDate();
+    var month = currentDate.getMonth() + 1;
+    var year = currentDate.getFullYear();
+
+    var d = day + "-" + month + "-" + year;
     var min = 0;
     var max = 0;
 
@@ -633,6 +639,12 @@ $(document).ready(function(){
  <script type="text/javascript">
 
 $('#bfechadevengo').click(function(){
+    var currentDate = new Date();
+    var day = currentDate.getDate();
+    var month = currentDate.getMonth() + 1;
+    var year = currentDate.getFullYear();
+
+    var d = day + "-" + month + "-" + year;
 
 var min = $('#mindevengo').val();
 var max = $('#maxdevengo').val();
@@ -731,6 +743,12 @@ language: {
 
 
 $(document).ready(function() {
+  var currentDate = new Date();
+    var day = currentDate.getDate();
+    var month = currentDate.getMonth() + 1;
+    var year = currentDate.getFullYear();
+
+    var d = day + "-" + month + "-" + year;
 
 var min = 0;
 var max = 0;
@@ -888,7 +906,12 @@ close: 'Cancel'
  <script type="text/javascript">
 
 $('#bfechapago').click(function(){
+    var currentDate = new Date();
+    var day = currentDate.getDate();
+    var month = currentDate.getMonth() + 1;
+    var year = currentDate.getFullYear();
 
+    var d = day + "-" + month + "-" + year;
 var min = $('#minpago').val();
 var max = $('#maxpago').val();
 
@@ -987,7 +1010,12 @@ language: {
 
 
 $(document).ready(function() {
+  var currentDate = new Date();
+    var day = currentDate.getDate();
+    var month = currentDate.getMonth() + 1;
+    var year = currentDate.getFullYear();
 
+    var d = day + "-" + month + "-" + year;
 var min = 0;
 var max = 0;
 
