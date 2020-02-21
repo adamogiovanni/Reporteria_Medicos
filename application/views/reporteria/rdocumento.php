@@ -169,7 +169,7 @@
                       <th>Nro Boleta</th>                                            
                       <th>Nombre Estado</th>
                       <th>Nro. Comprobante</th>         
-                      <th>Fecha Comprobante</th>
+                      <!-- <th>Fecha Comprobante</th> -->
                       <th>Fecha aprox. Pago</th>   
                       <th>Rut Profesional</th>
                       <th>Observación</th> 
@@ -186,7 +186,7 @@
                       <th>Nro Boleta</th>                                            
                       <th>Nombre Estado</th>
                       <th>Nro. Comprobante</th>         
-                      <th>Fecha Comprobante</th>
+                      <!-- <th>Fecha Comprobante</th> -->
                       <th>Fecha aprox. Pago</th>  
                       <th>Rut Profesional</th>
                       <th>Observación</th> 
