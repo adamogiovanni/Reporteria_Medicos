@@ -842,14 +842,14 @@ language: {
             {
                 extend: 'excel',
                 text: 'Excel',
-                title: 'NCMH ***DEVENGO***            Fecha:'+d,
+                title: 'NCMH    ***DEVENGO***  Fecha:'+d,
                 filename: 'NCMH_DEVENGO',
             }, {
                 extend: 'pdfHtml5',
                 text: 'PDF',
                 orientation: 'landscape',
-                title: 'NCMH ***DEVENGO***            Fecha:'+d,
-                filename: 'NCMH',
+                title: 'NCMH   ***DEVENGO***    Fecha:'+d,
+                filename: 'NCMH_DEVENGO',
                 customize: function ( doc ) {
                 // Splice the image in after the header, but before the table
                 doc.content.splice( 1, 0, {
@@ -862,7 +862,7 @@ language: {
             }, {
                 extend: 'print',
                 text: 'Imprimir',
-                title: 'NCMH ***DEVENGO***            Fecha:'+d,
+                title: 'NCMH   ***DEVENGO***       Fecha:'+d,
                 customize: function ( win ) {
                     $(win.document.body)
                         .css( 'font-size', '10pt' )
