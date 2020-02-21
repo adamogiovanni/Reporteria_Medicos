@@ -164,32 +164,43 @@
                   <thead>
                     <tr>
                       <th>Empresa</th>
-                       <th>ID</th>
-                      <th>Tipo Documento</th>
-                      <th>Valor Neto</th>
-                      <th>Valor Retencion</th>                      
+                       <!-- <th>ID</th> -->
+                      <th>Tipo Documento</th>                                          
                       <th>Nombre Estado</th>
                       <th>Nro. Comprobante</th>         
                       <th>Fecha Comprobante</th> 
-                      <th>Observación</th>
-                      <th>Rut Profesional</th>  
+                      <th>Rut Profesional</th>
+                      <th>Observación</th> 
+                      <th>Valor Retencion</th>
+                      <th>Valor Neto</th>    
                     </tr>
                   </thead>
 
                   <tfooter>
                     <tr>
-                      <th>Empresa</th>
-                       <th>ID</th>
-                      <th>Tipo Documento</th>
-                      <th>Valor Neto</th>
-                      <th>Valor Retencion</th>                         
+                    <th>Empresa</th>
+                       <!-- <th>ID</th> -->
+                      <th>Tipo Documento</th>                                          
                       <th>Nombre Estado</th>
                       <th>Nro. Comprobante</th>         
                       <th>Fecha Comprobante</th> 
+                      <th>Rut Profesional</th>
                       <th>Observación</th>
-                      <th>Rut Profesional</th>                   
+                      <th>Valor Retencion</th>                        
+                      <th>Valor Neto</th>
+                                 
                     </tr>
                   </tfooter>
+                  <tfoot>
+                    <tr>
+                      <th colspan="7" style="text-align:right">Total Pagina:</th>
+                      <th></th>
+                    </tr>
+                    <tr>
+                      <th colspan="7" style="text-align:right">Total General:</th>
+                      <th></th>
+                    </tr>
+                  </tfoot>
           </table>
     </div>
     </div>
@@ -684,7 +695,46 @@ language: {
     data:parametros,
     url:'rdocumento/consultadevengo',
     type: 'POST'
-  },
+  },"footerCallback": function ( row, data, start, end, display ) 
+    {
+      var api = this.api(), data;
+
+      // Remove the formatting to get integer data for summation
+      var intVal = function ( i ) {
+          return typeof i === 'string' ?
+              i.replace(/[\$,]/g, '')*1 :
+              typeof i === 'number' ?
+                  i : 0;
+      };
+
+      // Total over all pages
+      total = api
+          .column(7)
+          .data()
+          .reduce( function (a, b) {
+             return intVal(a) + intVal(b);
+          }, 0 );
+
+      // Total over this page
+      pageTotal = api
+          .column(7, { page: 'current'} )
+          .data()
+          .reduce( function (a, b) {
+              return intVal(a) + intVal(b);
+          }, 0 );
+
+
+      // Update footer
+      //$( api.column( 7 ).footer() ).html(('$'+pageTotal));//'$'+ pageTotal +'( $'+ total +' total)');
+
+      //var numFormat = $.fn.dataTable.render.number( '\.', ',', 2, ' $ ' ).display;
+      
+      $('tr:eq(0) th:eq(1)', api.table().footer()).html(pageTotal);
+      $('tr:eq(1) th:eq(1)', api.table().footer()).html(total);
+
+
+    },
+    //Final
   dom: 'Bfrtip',
   buttons: [
             'copy', {
@@ -788,39 +838,46 @@ language: {
     type: 'POST'
   },
 
-"footerCallback": function ( row, data, start, end, display ) 
-{
-  var api = this.api(), data;
+  "footerCallback": function ( row, data, start, end, display ) 
+    {
+      var api = this.api(), data;
 
-  // Remove the formatting to get integer data for summation
-  var intVal = function ( i ) {
-      return typeof i === 'string' ?
-          i.replace(/[\$,]/g, '')*1 :
-          typeof i === 'number' ?
-              i : 0;
-  };
+      // Remove the formatting to get integer data for summation
+      var intVal = function ( i ) {
+          return typeof i === 'string' ?
+              i.replace(/[\$,]/g, '')*1 :
+              typeof i === 'number' ?
+                  i : 0;
+      };
 
-  // Total over all pages
-  total = api
-      .column( 7 )
-      .data()
-      .reduce( function (a, b) {
-          return intVal(a) + intVal(b);
-      }, 0 );
+      // Total over all pages
+      total = api
+          .column(7)
+          .data()
+          .reduce( function (a, b) {
+             return intVal(a) + intVal(b);
+          }, 0 );
 
-  // Total over this page
-  pageTotal = api
-      .column( 7, { page: 'current'} )
-      .data()
-      .reduce( function (a, b) {
-          return intVal(a) + intVal(b);
-      }, 0 );
+      // Total over this page
+      pageTotal = api
+          .column(7, { page: 'current'} )
+          .data()
+          .reduce( function (a, b) {
+              return intVal(a) + intVal(b);
+          }, 0 );
 
-  // Update footer
-  $( api.column( 7 ).footer() ).html(
-      '$'+ pageTotal +' ( $'+ total +' total)'
-  );
-},
+
+      // Update footer
+      //$( api.column( 7 ).footer() ).html(('$'+pageTotal));//'$'+ pageTotal +'( $'+ total +' total)');
+
+      //var numFormat = $.fn.dataTable.render.number( '\.', ',', 2, ' $ ' ).display;
+      
+      $('tr:eq(0) th:eq(1)', api.table().footer()).html(pageTotal);
+      $('tr:eq(1) th:eq(1)', api.table().footer()).html(total);
+
+
+    },
+    //Final
   dom: 'Bfrtip',
   lengthMenu: [
             [ 10, 25, 50, -1 ],
@@ -951,7 +1008,46 @@ language: {
     data:parametros,
     url:'rdocumento/consultapago',
     type: 'POST'
-  },
+  },"footerCallback": function ( row, data, start, end, display ) 
+    {
+      var api = this.api(), data;
+
+      // Remove the formatting to get integer data for summation
+      var intVal = function ( i ) {
+          return typeof i === 'string' ?
+              i.replace(/[\$,]/g, '')*1 :
+              typeof i === 'number' ?
+                  i : 0;
+      };
+
+      // Total over all pages
+      total = api
+          .column(7)
+          .data()
+          .reduce( function (a, b) {
+             return intVal(a) + intVal(b);
+          }, 0 );
+
+      // Total over this page
+      pageTotal = api
+          .column(7, { page: 'current'} )
+          .data()
+          .reduce( function (a, b) {
+              return intVal(a) + intVal(b);
+          }, 0 );
+
+
+      // Update footer
+      //$( api.column( 7 ).footer() ).html(('$'+pageTotal));//'$'+ pageTotal +'( $'+ total +' total)');
+
+      //var numFormat = $.fn.dataTable.render.number( '\.', ',', 2, ' $ ' ).display;
+      
+      $('tr:eq(0) th:eq(1)', api.table().footer()).html(pageTotal);
+      $('tr:eq(1) th:eq(1)', api.table().footer()).html(total);
+
+
+    },
+    //Final
   dom: 'Bfrtip',
   buttons: [
             'copy', {
@@ -1052,7 +1148,46 @@ language: {
     data:parametros,
     url:'rdocumento/consultapago',
     type: 'POST'
-  },
+  },"footerCallback": function ( row, data, start, end, display ) 
+    {
+      var api = this.api(), data;
+
+      // Remove the formatting to get integer data for summation
+      var intVal = function ( i ) {
+          return typeof i === 'string' ?
+              i.replace(/[\$,]/g, '')*1 :
+              typeof i === 'number' ?
+                  i : 0;
+      };
+
+      // Total over all pages
+      total = api
+          .column(7)
+          .data()
+          .reduce( function (a, b) {
+             return intVal(a) + intVal(b);
+          }, 0 );
+
+      // Total over this page
+      pageTotal = api
+          .column(7, { page: 'current'} )
+          .data()
+          .reduce( function (a, b) {
+              return intVal(a) + intVal(b);
+          }, 0 );
+
+
+      // Update footer
+      //$( api.column( 7 ).footer() ).html(('$'+pageTotal));//'$'+ pageTotal +'( $'+ total +' total)');
+
+      //var numFormat = $.fn.dataTable.render.number( '\.', ',', 2, ' $ ' ).display;
+      
+      $('tr:eq(0) th:eq(1)', api.table().footer()).html(pageTotal);
+      $('tr:eq(1) th:eq(1)', api.table().footer()).html(total);
+
+
+    },
+    //Final
   dom: 'Bfrtip',
   lengthMenu: [
             [ 10, 25, 50, -1 ],
