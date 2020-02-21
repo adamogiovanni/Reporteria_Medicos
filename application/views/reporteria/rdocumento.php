@@ -499,6 +499,8 @@ $(document).ready(function()
 
     $('#example').dataTable( {
       language: {
+      decimal:        ",",
+      thousands:      ".",
       processing: "<i class='fa fa-spinner fa-5x fa-spin fa-fw' aria-hidden='true'></i>",
       search: "<i class='fa fa-search' aria-hidden='true'></i>",
       lengthMenu:     "Mostrando _MENU_ casos",
@@ -574,10 +576,7 @@ $(document).ready(function()
       lengthMenu: [
               [ 10, 25, 50, -1 ],
               [ '10 Datos', '25 Datos', '50 Datos', 'Todos' ]
-          ],
-      columns: [
-            { data: "Valor Neto", render: $.fn.dataTable.render.number( '\.', ',', 0, '$' ) }
-      ],    
+          ], 
       buttons: [
               'pageLength', 
 
