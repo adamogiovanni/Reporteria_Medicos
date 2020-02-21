@@ -293,6 +293,12 @@
  <script type="text/javascript">
 
 $('#search').click(function(){
+var currentDate = new Date()
+var day = currentDate.getDate()
+var month = currentDate.getMonth() + 1
+var year = currentDate.getFullYear()
+
+var d = day + "-" + month + "-" + year;
 
 var min = $('#min').val();
 var max = $('#max').val();
@@ -400,13 +406,13 @@ $('#example').dataTable( {
               {
                   extend: 'excel',
                   text: 'Excel',
-                  title: 'NCMH  ***PROVISION***',
+                  title: 'NCMH  ***PROVISION***             Fecha:'+d,
                   filename: 'NCMH_PROVISION',
               }, {
                   extend: 'pdfHtml5',
                   text: 'PDF',
                   orientation: 'landscape',
-                  title: 'NCMH  ***PROVISION***',
+                  title: 'NCMH  ***PROVISION***             Fecha:'+d,
                   filename: 'NCMH_PROVISION',
                   customize: function ( doc ) {
                 // Splice the image in after the header, but before the table
@@ -420,7 +426,7 @@ $('#example').dataTable( {
               }, {
                   extend: 'print',
                   text: 'Imprimir',
-                  title: 'NCMH ***PROVISION***',
+                  title: 'NCMH  ***PROVISION***             Fecha:'+d,
                   customize: function ( win ) {
                       $(win.document.body)
                           .css( 'font-size', '10pt' )
@@ -557,13 +563,13 @@ $(document).ready(function()
               {
                   extend: 'excel',
                   text: 'Excel',
-                  title: 'NCMH ***PROVISION***',
+                  title: 'NCMH ***PROVISION***                  Fecha:'+d,
                   filename: 'NCMH_PROVISION',
               }, {
                   extend: 'pdfHtml5',
                   text: 'PDF',
                   orientation: 'landscape',
-                  title: 'NCMH ***PROVISION***',
+                  title: 'NCMH ***PROVISION***                  Fecha:'+d,
                   filename: 'NCMH:PROVISION',
                   customize: function ( doc ) {
                 // Splice the image in after the header, but before the table
@@ -577,7 +583,7 @@ $(document).ready(function()
               }, {
                   extend: 'print',
                   text: 'Imprimir',
-                  title: 'NCMH ***PROVISION***',
+                  title: 'NCMH ***PROVISION***                  Fecha:'+d,
                   customize: function ( win ) {
                       $(win.document.body)
                           .css( 'font-size', '10pt' )
@@ -672,13 +678,13 @@ language: {
             'copy', {
                 extend: 'excel',
                 text: 'Excel',
-                title: 'NCMH ***DEVENGO***',
+                title: 'NCMH ***DEVENGO***            Fecha:'+d,
                 filename: 'NCMH_DEVENGO',
             }, {
                 extend: 'pdfHtml5',
                 text: 'PDF',
                 orientation: 'landscape',
-                title: 'NCMH ***DEVENGO***',
+                title: 'NCMH ***DEVENGO***            Fecha:'+d,
                 filename: 'NCMH_DEVENGO',
                 customize: function ( doc ) {
                 // Splice the image in after the header, but before the table
@@ -692,7 +698,7 @@ language: {
             }, {
                 extend: 'print',
                 text: 'Imprimir',
-                title: 'NCMH ***DEVENGO***',
+                title: 'NCMH ***DEVENGO***            Fecha:'+d,
                 customize: function ( win ) {
                     $(win.document.body)
                         .css( 'font-size', '10pt' )
@@ -818,13 +824,13 @@ language: {
             {
                 extend: 'excel',
                 text: 'Excel',
-                title: 'NCMH ***DEVENGO***',
+                title: 'NCMH ***DEVENGO***            Fecha:'+d,
                 filename: 'NCMH_DEVENGO',
             }, {
                 extend: 'pdfHtml5',
                 text: 'PDF',
                 orientation: 'landscape',
-                title: 'NCMH',
+                title: 'NCMH ***DEVENGO***            Fecha:'+d,
                 filename: 'NCMH',
                 customize: function ( doc ) {
                 // Splice the image in after the header, but before the table
@@ -838,7 +844,7 @@ language: {
             }, {
                 extend: 'print',
                 text: 'Imprimir',
-                title: 'NCMH ***DEVENGO***',
+                title: 'NCMH ***DEVENGO***            Fecha:'+d,
                 customize: function ( win ) {
                     $(win.document.body)
                         .css( 'font-size', '10pt' )
