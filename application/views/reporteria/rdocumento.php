@@ -197,11 +197,11 @@
                   </tfooter>
                   <tfoot>
                     <tr>
-                      <th colspan="7" style="text-align:right">Total Pagina:</th>
+                      <th colspan="10" style="text-align:right">Total Pagina:</th>
                       <th></th>
                     </tr>
                     <tr>
-                      <th colspan="7" style="text-align:right">Total General:</th>
+                      <th colspan="10" style="text-align:right">Total General:</th>
                       <th></th>
                     </tr>
                   </tfoot>
@@ -715,7 +715,7 @@ language: {
 
       // Total over all pages
       total = api
-          .column(7)
+          .column(10)
           .data()
           .reduce( function (a, b) {
              return intVal(a) + intVal(b);
@@ -723,7 +723,7 @@ language: {
 
       // Total over this page
       pageTotal = api
-          .column(7, { page: 'current'} )
+          .column(10, { page: 'current'} )
           .data()
           .reduce( function (a, b) {
               return intVal(a) + intVal(b);
@@ -858,7 +858,7 @@ language: {
 
       // Total over all pages
       total = api
-          .column(7)
+          .column(10)
           .data()
           .reduce( function (a, b) {
              return intVal(a) + intVal(b);
@@ -866,7 +866,7 @@ language: {
 
       // Total over this page
       pageTotal = api
-          .column(7, { page: 'current'} )
+          .column(10, { page: 'current'} )
           .data()
           .reduce( function (a, b) {
               return intVal(a) + intVal(b);
