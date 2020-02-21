@@ -400,14 +400,14 @@ $('#example').dataTable( {
               {
                   extend: 'excel',
                   text: 'Excel',
-                  title: 'NCMH',
-                  filename: 'NCMH',
+                  title: 'NCMH  ***PROVISION***',
+                  filename: 'NCMH_PROVISION',
               }, {
                   extend: 'pdfHtml5',
                   text: 'PDF',
                   orientation: 'landscape',
-                  title: 'NCMH',
-                  filename: 'NCMH',
+                  title: 'NCMH  ***PROVISION***',
+                  filename: 'NCMH_PROVISION',
                   customize: function ( doc ) {
                 // Splice the image in after the header, but before the table
                     doc.content.splice( 1, 0, {
@@ -420,7 +420,7 @@ $('#example').dataTable( {
               }, {
                   extend: 'print',
                   text: 'Imprimir',
-                  title: 'NCMH',
+                  title: 'NCMH ***PROVISION***',
                   customize: function ( win ) {
                       $(win.document.body)
                           .css( 'font-size', '10pt' )
@@ -557,14 +557,14 @@ $(document).ready(function()
               {
                   extend: 'excel',
                   text: 'Excel',
-                  title: 'NCMH',
-                  filename: 'NCMH',
+                  title: 'NCMH ***PROVISION***',
+                  filename: 'NCMH_PROVISION',
               }, {
                   extend: 'pdfHtml5',
                   text: 'PDF',
                   orientation: 'landscape',
-                  title: 'NCMH',
-                  filename: 'NCMH',
+                  title: 'NCMH ***PROVISION***',
+                  filename: 'NCMH:PROVISION',
                   customize: function ( doc ) {
                 // Splice the image in after the header, but before the table
                     doc.content.splice( 1, 0, {
@@ -577,7 +577,7 @@ $(document).ready(function()
               }, {
                   extend: 'print',
                   text: 'Imprimir',
-                  title: 'NCMH',
+                  title: 'NCMH ***PROVISION***',
                   customize: function ( win ) {
                       $(win.document.body)
                           .css( 'font-size', '10pt' )
@@ -672,14 +672,14 @@ language: {
             'copy', {
                 extend: 'excel',
                 text: 'Excel',
-                title: 'NCMH',
-                filename: 'NCMH',
+                title: 'NCMH ***DEVENGO***',
+                filename: 'NCMH_DEVENGO',
             }, {
                 extend: 'pdfHtml5',
                 text: 'PDF',
                 orientation: 'landscape',
-                title: 'NCMH',
-                filename: 'NCMH',
+                title: 'NCMH ***DEVENGO***',
+                filename: 'NCMH_DEVENGO',
                 customize: function ( doc ) {
                 // Splice the image in after the header, but before the table
                 doc.content.splice( 1, 0, {
@@ -692,7 +692,7 @@ language: {
             }, {
                 extend: 'print',
                 text: 'Imprimir',
-                title: 'NCMH',
+                title: 'NCMH ***DEVENGO***',
                 customize: function ( win ) {
                     $(win.document.body)
                         .css( 'font-size', '10pt' )
@@ -818,8 +818,8 @@ language: {
             {
                 extend: 'excel',
                 text: 'Excel',
-                title: 'NCMH',
-                filename: 'NCMH',
+                title: 'NCMH ***DEVENGO***',
+                filename: 'NCMH_DEVENGO',
             }, {
                 extend: 'pdfHtml5',
                 text: 'PDF',
@@ -838,7 +838,7 @@ language: {
             }, {
                 extend: 'print',
                 text: 'Imprimir',
-                title: 'NCMH',
+                title: 'NCMH ***DEVENGO***',
                 customize: function ( win ) {
                     $(win.document.body)
                         .css( 'font-size', '10pt' )
@@ -928,14 +928,14 @@ language: {
             'copy', {
                 extend: 'excel',
                 text: 'Excel',
-                title: 'NCMH',
-                filename: 'NCMH',
+                title: 'NCMH ***PAGO***',
+                filename: 'NCMH_PAGO',
             }, {
                 extend: 'pdfHtml5',
                 text: 'PDF',
                 orientation: 'landscape',
-                title: 'NCMH',
-                filename: 'NCMH',
+                title: 'NCMH ***PAGO***',
+                filename: 'NCMH_PAGO',
                 customize: function ( doc ) {
                 // Splice the image in after the header, but before the table
                 doc.content.splice( 1, 0, {
@@ -948,7 +948,7 @@ language: {
             }, {
                 extend: 'print',
                 text: 'Imprimir',
-                title: 'NCMH',
+                title: 'NCMH ***PAGO***',
                 customize: function ( win ) {
                     $(win.document.body)
                         .css( 'font-size', '10pt' )
@@ -1040,14 +1040,14 @@ language: {
             {
                 extend: 'excel',
                 text: 'Excel',
-                title: 'NCMH',
-                filename: 'NCMH',
+                title: 'NCMH ***PAGO***',
+                filename: 'NCMH_PAGO',
             },{
                 extend: 'pdfHtml5',
                 text: 'PDF',
                 orientation: 'landscape',
-                title: 'NCMH',
-                filename: 'NCMH',
+                title: 'NCMH ***PAGO***',
+                filename: 'NCMH_PAGO',
                 customize: function ( doc ) {
                 // Splice the image in after the header, but before the table
                 doc.content.splice( 1, 0, {
@@ -1060,7 +1060,7 @@ language: {
             },  {
                 extend: 'print',
                 text: 'Imprimir',
-                title: 'NCMH',
+                title: 'NCMH ***PAGO***',
                 customize: function ( win ) {
                     $(win.document.body)
                         .css( 'font-size', '10pt' )
