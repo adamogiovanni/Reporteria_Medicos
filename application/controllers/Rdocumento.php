@@ -170,16 +170,17 @@
         foreach($prueba as $pru)
         {
           $data[] = array(
-          $pru['Id'],
+          //$pru['Id'],
           $pru['Empresa'],
-          $pru['Correlativo'],
-          $pru['Fecha_Proceso'],
+          //$pru['Correlativo'],
+          //$pru['Fecha_Proceso'],
           $pru['Nro_Doc_Cancelado'],
-          $pru['Monto_Pagado'],
+          
           $pru['Nro_Comprobante'],
           $pru['FechaComprobante'],
           $pru['Fecha_de_Proceso_Pago'],
-          $pru['Rut']);
+          $pru['Rut'],
+          '$'.number_format($pru['Valor_Neto'], 0, ",", "."));
         }
       }
       else
@@ -188,16 +189,17 @@
         foreach($prueba as $pru)
         {
           $data[] = array(
-          $pru['Id'],
-          $pru['Empresa'],
-          $pru['Correlativo'],
-          $pru['Fecha_Proceso'],
-          $pru['Nro_Doc_Cancelado'],
-          $pru['Monto_Pagado'],
-          $pru['Nro_Comprobante'],
-          $pru['FechaComprobante'],
-          $pru['Fecha_de_Proceso_Pago'],
-          $pru['Rut'] );
+            //$pru['Id'],
+            $pru['Empresa'],
+            //$pru['Correlativo'],
+            //$pru['Fecha_Proceso'],
+            $pru['Nro_Doc_Cancelado'],
+            
+            $pru['Nro_Comprobante'],
+            $pru['FechaComprobante'],
+            $pru['Fecha_de_Proceso_Pago'],
+            $pru['Rut'],
+            '$'.number_format($pru['Valor_Neto'], 0, ",", "."));
         }
       }
       $result = array(
