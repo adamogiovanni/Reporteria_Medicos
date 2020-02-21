@@ -226,8 +226,9 @@
         $pru['FechaComprobante'],
         $pru['Rut_Doctor'],
         $pru['Observacion'],
-        '$'.number_format($pru['Valor'], 0, ",", "."));
-        
+        //Backup Formato moneda a valor de la tabla
+        //'$'.number_format($pru['Valor'], 0, ",", "."));
+        $pru['Valor']
       }
     }
     else
@@ -243,7 +244,9 @@
         $pru['FechaComprobante'],
         $pru['Rut_Doctor'],
         $pru['Observacion'],
-        '$'.number_format($pru['Valor'], 0, ",", "."));
+        //Backup Formato moneda a valor de la tabla
+        //'$'.number_format($pru['Valor'], 0, ",", "."));
+        $pru['Valor']
       }
     }  
     $result = array(
