@@ -364,7 +364,7 @@ $('#example').dataTable( {
     ,"ajax": {
       data:parametros,
       url:'rdocumento/consultaprovision',
-      type: 'GET'
+      type: 'POST'
     },
     
 
