@@ -366,7 +366,10 @@ $('#example').dataTable( {
       url:'rdocumento/consultaprovision',
       type: 'POST'
     },
-    
+    "language": {
+            "decimal": ",",
+            "thousands": "."
+        },
 
     //Calculo de Total
     //Inicio
@@ -376,12 +379,11 @@ $('#example').dataTable( {
 
       // Remove the formatting to get integer data for summation
       var intVal = function ( i ) {
-          return typeof i === 'string' ?
-              i.replace(/[\$,]/g, '')*1 :
-              typeof i === 'number' ?
-                  i : 0;
+                return typeof i === 'string' ?
+                    i.replace(/[\$,]/g, '')*1 :
+                    typeof i === 'number' ?
+                        i : 0;
       };
-
       // Total over all pages
       total = api
           .column(7)
@@ -400,11 +402,11 @@ $('#example').dataTable( {
 
 
       // Update footer
-      //$( api.column( 7 ).footer() ).html(('$'+pageTotal));//'$'+ pageTotal +'( $'+ total +' total)');
+      $( api.column( 7 ).footer() ).html(('$'+pageTotal));//'$'+ pageTotal +'( $'+ total +' total)');
 
-      var numFormat = $.fn.dataTable.render.number( '\.', ',', 0,).display;      
-      $('tr:eq(0) th:eq(1)', api.table().footer()).html('$'+ numFormat(pageTotal));
-      $('tr:eq(1) th:eq(1)', api.table().footer()).html('$'+ numFormat(total));
+      //var numFormat = $.fn.dataTable.render.number( '\.', ',', 0,).display;      
+      //$('tr:eq(0) th:eq(1)', api.table().footer()).html('$'+ numFormat(pageTotal));
+      //$('tr:eq(1) th:eq(1)', api.table().footer()).html('$'+ numFormat(total));
 
 
     },
