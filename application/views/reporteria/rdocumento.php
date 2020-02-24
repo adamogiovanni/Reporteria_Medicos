@@ -1071,13 +1071,13 @@ language: {
             'copy', {
                 extend: 'excel',
                 text: 'Excel',
-                title: 'NCMH ***PAGO***',
+                title: 'NCMH   ***PAGO***       Fecha:'+d,
                 filename: 'NCMH_PAGO',
             }, {
                 extend: 'pdfHtml5',
                 text: 'PDF',
                 orientation: 'landscape',
-                title: 'NCMH ***PAGO***',
+                title: 'NCMH   ***PAGO***       Fecha:'+d,
                 filename: 'NCMH_PAGO',
                 customize: function ( doc ) {
                 // Splice the image in after the header, but before the table
@@ -1091,7 +1091,7 @@ language: {
             }, {
                 extend: 'print',
                 text: 'Imprimir',
-                title: 'NCMH ***PAGO***',
+                title: 'NCMH   ***PAGO***       Fecha:'+d,
                 customize: function ( win ) {
                       $(win.document.body)
                           .css( 'font-size', '10pt' )
@@ -1227,13 +1227,13 @@ language: {
             {
                 extend: 'excel',
                 text: 'Excel',
-                title: 'NCMH ***PAGO***',
+                title: 'NCMH   ***PAGO***       Fecha:'+d,
                 filename: 'NCMH_PAGO',
             },{
                 extend: 'pdfHtml5',
                 text: 'PDF',
                 orientation: 'landscape',
-                title: 'NCMH ***PAGO***',
+                title: 'NCMH   ***PAGO***       Fecha:'+d,
                 filename: 'NCMH_PAGO',
                 customize: function ( doc ) {
                 // Splice the image in after the header, but before the table
@@ -1247,7 +1247,7 @@ language: {
             },  {
                 extend: 'print',
                 text: 'Imprimir',
-                title: 'NCMH ***PAGO***',
+                title: 'NCMH   ***PAGO***       Fecha:'+d,
                 customize: function ( win ) {
                       $(win.document.body)
                           .css( 'font-size', '10pt' )
