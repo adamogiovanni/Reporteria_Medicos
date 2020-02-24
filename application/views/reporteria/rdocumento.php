@@ -686,7 +686,7 @@ if(min != '' && max ){
     table.destroy();
 $('#devengo').dataTable( {
 language: {
-       processing: "<i class='fa fa-spinner fa-5x fa-spin fa-fw' aria-hidden='true'></i>",
+      processing: "<i class='fa fa-spinner fa-5x fa-spin fa-fw' aria-hidden='true'></i>",
       search: "<i class='fa fa-search' aria-hidden='true'></i>",
       lengthMenu:     "Mostrando _MENU_ casos",
       info:           "Mostrando del _START_ al _END_ de _TOTAL_ casos",
@@ -798,6 +798,7 @@ language: {
           "dom": '<"dt-buttons"Bf><"clear">lirtp',
             "paging": true,
             "autoWidth": true
+       } );
 
 }else{
     alert('Both Date is Required and Choose what to show!');
