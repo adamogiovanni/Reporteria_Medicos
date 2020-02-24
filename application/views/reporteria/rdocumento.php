@@ -339,7 +339,9 @@ if(min != '' && max ){
     table.destroy();
 $('#example').dataTable( {
   language: {
-      processing: "<i class='fa fa-spinner fa-5x fa-spin fa-fw' aria-hidden='true'></i>",
+      decimal:        ",",
+      thousands:      ".",
+       processing: "<i class='fa fa-spinner fa-5x fa-spin fa-fw' aria-hidden='true'></i>",
       search: "<i class='fa fa-search' aria-hidden='true'></i>",
       lengthMenu:     "Mostrando _MENU_ casos",
       info:           "Mostrando del _START_ al _END_ de _TOTAL_ casos",
@@ -467,11 +469,13 @@ $('#example').dataTable( {
                   messageBottom: null
               }
           ],
-
+          "dom": '<"dt-buttons"Bf><"clear">lirtp',
+            "paging": true,
+            "autoWidth": true
     } );
 
 }else{
-    alert('Both Date is Required and Choose what to show!');
+    alert('Ambas fechas son obligatorias');
 }
 
 });
@@ -500,7 +504,7 @@ $(document).ready(function()
       language: {
       decimal:        ",",
       thousands:      ".",
-      processing: "<i class='fa fa-spinner fa-5x fa-spin fa-fw' aria-hidden='true'></i>",
+       processing: "<i class='fa fa-spinner fa-5x fa-spin fa-fw' aria-hidden='true'></i>",
       search: "<i class='fa fa-search' aria-hidden='true'></i>",
       lengthMenu:     "Mostrando _MENU_ casos",
       info:           "Mostrando del _START_ al _END_ de _TOTAL_ casos",
@@ -629,7 +633,9 @@ $(document).ready(function()
                   messageBottom: null
               }
           ],
-
+           "dom": '<"dt-buttons"Bf><"clear">lirtp',
+            "paging": true,
+            "autoWidth": true 
     });
   });
 
@@ -680,7 +686,7 @@ if(min != '' && max ){
     table.destroy();
 $('#devengo').dataTable( {
 language: {
-      processing: "<i class='fa fa-spinner fa-5x fa-spin fa-fw' aria-hidden='true'></i>",
+       processing: "<i class='fa fa-spinner fa-5x fa-spin fa-fw' aria-hidden='true'></i>",
       search: "<i class='fa fa-search' aria-hidden='true'></i>",
       lengthMenu:     "Mostrando _MENU_ casos",
       info:           "Mostrando del _START_ al _END_ de _TOTAL_ casos",
@@ -789,10 +795,9 @@ language: {
                 messageBottom: null
             }
         ],
-               "dom": '<"dt-buttons"Bf><"clear">lirtp',
+          "dom": '<"dt-buttons"Bf><"clear">lirtp',
             "paging": true,
             "autoWidth": true
-} );
 
 }else{
     alert('Both Date is Required and Choose what to show!');
@@ -821,12 +826,12 @@ var max = 0;
 $('#devengo').dataTable( {
 
 language: {
-      processing: "<i class='fa fa-spinner fa-5x fa-spin fa-fw' aria-hidden='true'></i>",
-      search: "<i class='fa fa-search' aria-hidden='true'></i>",
-      lengthMenu:     "Mostrando _MENU_ casos",
-      info:           "Mostrando del _START_ al _END_ de _TOTAL_ casos",
-      infoEmpty:      "Mostrando 0 al 0 de 0 coincidencias",
-      infoFiltered: "(filtrado de un total de _MAX_ elementos)",
+       processing: "<i class='fa fa-spinner fa-5x fa-spin fa-fw' aria-hidden='true'></i>",
+      search:"<i class='fa fa-search' aria-hidden='true'></i>",
+      lengthMenu:"Mostrando _MENU_ casos",
+      info:"Mostrando del _START_ al _END_ de _TOTAL_ casos",
+      infoEmpty:"Mostrando 0 al 0 de 0 coincidencias",
+      infoFiltered:"(filtrado de un total de _MAX_ elementos)",
       infoPostFix: "",
       loadingRecords: "<i class='fa fa-spinner fa-5x fa-spin fa-fw' aria-hidden='true'></i>",
       zeroRecords: "No se encontraron coincidencias",
@@ -992,7 +997,7 @@ if(min != '' && max ){
     table.destroy();
 $('#pago').dataTable( {
 language: {
-      processing: "<i class='fa fa-spinner fa-5x fa-spin fa-fw' aria-hidden='true'></i>",
+       processing: "<i class='fa fa-spinner fa-5x fa-spin fa-fw' aria-hidden='true'></i>",
       search: "<i class='fa fa-search' aria-hidden='true'></i>",
       lengthMenu:     "Mostrando _MENU_ casos",
       info:           "Mostrando del _START_ al _END_ de _TOTAL_ casos",
